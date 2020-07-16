@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Configurações gerais */
+
+body {
+    background-color: rgb(193, 212, 252);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.cabecalho {
+    font-size: 1.4em;
+}
+
+.cabecalho, .rodape {
+    background-color: whitesmoke;
+    padding: 8%;
+}
+
+.nav {
+    padding: 2%;
+    background-color: rgb(46, 45, 45);
+}
+
+.nav > a {
+    color: whitesmoke;
+    font-size: 1.3em;
+    padding: 1%;
+}
+
+.nav > a:hover {
+    color: black;
+    background-color: whitesmoke;
+}
+
+.conteudo-principal {
+    padding: 25% 10%;
+    font-size: 1.5em;
+}
+
+.conteudo-principal > p {
+    padding: 1%;
+}
+
+.rodape {
+    padding-left: 40%;
+}
+.rodape > p {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin: 5% 5%;   
+}
+
+.rodape img {  
+    width: 10%;
+    padding: 2%;
+}
+
+.rodape img:hover {
+    width: 12%;
+}
+
+/* Página de funcionários */
+
+.nome-loja {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.titulo-h2 {
+    padding: 2% 2% 2% 40%;
+    font-weight: bold;
+    font-size: 1.8em;
+    background-color: whitesmoke;
+    margin: 5%;    
+}
+
+.titulo-h2:hover {
+    background-color: gray;
+}
+
+li {
+    padding-left: 5%;
+    font-size: 1.2em;
+    font-style: italic;
+    padding-bottom: 1%;
+}
+
+/* Págida de estoque */
+ .imagens-produtos {
+     width: 20%;
+}
+
+table {
+    padding: 1%;
+    background-color:whitesmoke; 
+    margin: 5%;
+}
+ 
+th {
+    padding: 2%;
+    background-color: rgb(46, 45, 45);
+    font-size: 1.4em;
+    color:white;
+    font-weight: bold;
+}
+
+td {
+    font-weight: bold;
+    text-align: center;
+}
+
+td > img {
+    width: 40%;
+    padding-left: 20%;
+}
+
+/* Página Add Produto */
+
+form {
+    margin: 5%;
+    background-color: whitesmoke;
+}
+
+form > div {
+    padding: 2%;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+input {
+    padding: 0.5%;
+}
+
+.form-add {
+    background-color: rgb(46, 45, 45);
+}
+
+
+button {
+    background-color: whitesmoke;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 1%;      
+    border-style: none; 
+}
+
+button:hover {
+    background-color:rgb(193, 212, 252);
+}
