@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: #F7F7F9;
+}
+
+.cabecalho {
+    text-align: center;
+    background-color: #2B2D42;
+    padding: 2%;
+}
+
+#minha-foto {
+    width: 30%;
+    margin-top: 7%;
+    border: 3px solid white;
+    border-radius: 100%;    
+}
+
+#logo {
+    width: 10%;
+    padding: 2%;   
+}
+.nav {
+    background-color: #F7E733;
+    text-align: center;
+    padding: 2%;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3em;
+    padding: 1% 5%;
+    margin: 1%;
+}
+
+a:visited, a:link {
+    color: #2B2D42;
+}
+
+a:hover {
+    color: #E86A92;
+}
+
+.principal {
+    margin: 4% 8%;
+    background-color: #F7F7F9;
+    padding: 3%; 
+    width: 40%;
+    display: inline-block;
+}
+
+.titulo {
+    color: #E86A92;
+    padding: 2%;
+}
+
+.titulo-secundario {
+    padding: 2%;
+    color: #2B2D42;
+}
+
+.descricao {
+    padding: 2% 0% 2% 0%;
+    margin: 1%;
+    text-align: justify;
+}
+
+.rodape {
+    background-color: #2B2D42;
+    padding: 5%;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+#logo-rodape {
+    width: 3%;
+    padding: 1%;
+}
+
+
+/* Projetos */
+.titulo-projeto {
+    padding: 2% 10%;
+    color: #E86A92;
+}
+
+#foto-projeto {
+    width: 90%;
+    margin: 2%;
+}
+
+.projetos {
+    margin: 2% 5%; 
+    background-color: white;
+    text-align: center;
+    line-height: 1.8em;
+    display: inline-block;
+    width: 40%;
+    padding: 1%;
+    border: 2px solid #2B2D42  ;
+}
+
+/*contato*/ 
+input {
+    display: block;
+}
