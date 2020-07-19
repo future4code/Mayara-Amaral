@@ -107,7 +107,58 @@ a:hover {
     border: 2px solid #2B2D42  ;
 }
 
-/*contato*/ 
+/*contato*/
+.formulario {   
+    margin: 4% 8%;
+    background-color: #F7E733;
+    padding: 1%; 
+    width: 30%;
+    display: inline-block;
+    border: 1px solid red;        
+}
+
+label {
+    font-weight: bold; 
+}
+
 input {
     display: block;
+    background-color: white;
+    color:#2B2D42;
+    font-weight: bold;
+    border: none;
+    font-size: 1.3em;
+    padding: 1%;
+    width: 100%;       
 }
+
+#botao {
+ margin-top: 5%;
+ width: 20%;
+ background-color: #E86A92;
+}
+
+#mensagem {
+    height: 100px;
+}
+
+.redes-sociais {    
+    float: right;
+    margin: 4% 16% 0% 0%;
+    padding: 2%
+    border: 1px solid red
+}
+
+h4 {
+    margin: 5% 0%;
+    font-size: 1.3em;
+}
+
+img {
+    width: 10%;
+}
+
+
+
+
+
