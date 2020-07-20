@@ -76,7 +76,7 @@ div>p:first-child {
 }
 
 #container-de-descricao>ol {
-    padding: 15px 0px;
+    padding: 15px 0px;   
 }
 
 #container-para-comprar {
@@ -143,4 +143,12 @@ td button:active {
 
 #back-button:hover {
     background-color: #635a3d
+}
+
+.icone:hover {
+ opacity: 0.5;
+}
+
+.icone:active {
+    opacity: 1;
 }
