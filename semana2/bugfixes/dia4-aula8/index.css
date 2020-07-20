@@ -37,6 +37,10 @@ div img {
     background: black;
 }
 
+.container>a {
+    display: block;
+}
+
 .botao-amarelo {
     background-color: #ffaf43;
     width: 250px;
