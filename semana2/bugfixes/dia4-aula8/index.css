@@ -76,7 +76,7 @@ div>p:first-child {
 }
 
 #container-de-descricao>ol {
-    padding: 15px 0px;   
+    padding: 2% 42%;   
 }
 
 #container-para-comprar {
@@ -130,6 +130,9 @@ td button:active {
     height: 100px;
 }
 
+.botao-voltar {
+    text-align: center;
+}
 
 #back-button {
     background-color: white;
