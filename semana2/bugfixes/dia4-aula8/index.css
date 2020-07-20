@@ -76,7 +76,8 @@ div>p:first-child {
 }
 
 #container-de-descricao>ol {
-    padding: 2% 42%;   
+    padding: 15px 0px;
+    list-style-position: inside;   
 }
 
 #container-para-comprar {
