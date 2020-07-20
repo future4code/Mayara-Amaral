@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: #F7F7F9;
+}
+
+.cabecalho {
+    text-align: center;
+    background-color: #2B2D42;
+    padding: 2%;
+}
+
+#minha-foto {
+    width: 30%;
+    margin-top: 7%;
+    border: 3px solid white;
+    border-radius: 100%;
+    opacity: 0.8;   
+}
+
+#minha-foto:hover {
+    opacity: 1;
+    transition: 1s;
+}
+
+#logo {
+    width: 10%;
+    padding: 2%;   
+}
+.nav {
+    background-color: #F7E733;
+    text-align: center;
+    padding: 2%;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3em;
+    padding: 1% 5%;
+    margin: 1%;
+}
+
+a:visited, a:link {
+    color: #2B2D42;
+}
+
+a:hover {
+    color: #E86A92;
+}
+
+.principal {
+    margin: 4% 8%;
+    background-color: #F7F7F9;
+    padding: 3%; 
+    width: 40%;
+    display: inline-block;
+}
+
+.titulo {
+    color: #E86A92;
+    padding: 2%;
+}
+
+.titulo-secundario {
+    padding: 2%;
+    color: #2B2D42;
+}
+
+.descricao {
+    padding: 2% 0% 2% 0%;
+    margin: 1%;
+    text-align: justify;
+}
+
+.rodape {
+    background-color: #2B2D42;
+    padding: 5%;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+#logo-rodape {
+    width: 3%;
+    padding: 1%;
+}
+
+
+/* Projetos */
+.titulo-projeto {
+    padding: 2% 10%;
+    color: #E86A92;
+}
+
+#foto-projeto {
+    width: 100%;
+}
+
+.projetos {
+    margin: 2% 8%; 
+    background-color: #F7E733;        
+    width: 82%;
+    padding: 2%;
+}
+
+.descricao-projeto {
+    text-align: center;
+    padding: 1%;
+    font-size: 1.2em;
+    font-weight: bolder;
+    background-color: #F7F7F9;
+    border-radius: 15px;
+    margin-bottom: 3%;
+}
+
+/*contato*/
+.formulario {   
+    margin: 4% 8%;
+    background-color: #F7E733;
+    padding: 1%; 
+    width: 30%;
+    display: inline-block;        
+}
+
+label {
+    font-weight: bold; 
+}
+
+input {
+    display: block;
+    background-color: white;
+    color:#2B2D42;
+    font-weight: bold;
+    border: none;
+    font-size: 1.3em;
+    padding: 1%;
+    width: 100%;       
+}
+
+#botao {
+ margin-top: 5%;
+ width: 20%;
+ background-color: #E86A92;
+}
+
+#mensagem {
+    height: 100px;
+}
+
+.redes-sociais {    
+    float: right;
+    margin: 4% 16% 0% 0%;
+    padding: 2%
+    border: 1px solid red;
+}
+
+h4 {
+    margin: 5% 0%;
+    font-size: 1.3em;
+}
+
+img {
+    width: 10%;
+}
+
+
+
+
+
