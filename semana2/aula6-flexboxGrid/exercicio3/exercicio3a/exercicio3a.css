@@ -7,16 +7,29 @@ body {
     color: white;
 }
 
-.green-background {
-    background-color: green;
+#top-container {
+    display: flex;
+    height: 50px;
 }
 
+.green-background {
+    background-color: green;
+    width: 25%;   
+}    
+
 .yellow-background {
-    background-color: yellow;
+    background-color: yellow; 
+    width: 75%;
 }
 
 .pink-background {
     background-color: fuchsia;
+    height: 400px;
+}
+
+#middle-container {
+    display: flex;
+    width: 40%;
 }
 
 .blue-background {
