@@ -1,0 +1,55 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+div {
+   
+}  
+
+#main-container {
+    width: 100vw;
+}
+
+#first-block {
+    background-color: red;
+    padding: 10%;  
+}   
+
+.blue-block {
+    background-color: blue;
+    padding: 10%;
+    margin: 5%;
+    border: 1px solid black;    
+}
+
+.yellow-block {
+    background-color: yellow;
+    padding: 10%;
+    margin: 5%;
+    border: 1px solid black;
+}
+
+.green-block {
+    background-color: green;
+    padding: 10%;
+    margin: 5%; 
+    border: 1px solid black;
+}
+
+.black-block {
+    background-color: black;
+    color: white;
+    padding: 10%;
+    margin: 5%;
+    border: 1px solid black;
+}
+
+.white-block {
+    background-color: white;
+    padding: 10%;
+    margin: 5%;
+    border: 1px solid black;
+}
