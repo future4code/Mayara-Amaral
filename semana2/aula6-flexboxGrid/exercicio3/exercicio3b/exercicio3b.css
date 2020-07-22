@@ -19,11 +19,17 @@ body {
 }
 
 .green-background {
-    background-color: green;   
+    background-color: green; 
+    display: grid;
+    justify-items: center;
+    align-items: center;  
 }
 
 .yellow-background {
-    background-color: yellow; 
+    background-color: yellow;
+    display: grid;
+    justify-items: center;
+    align-items: center;   
 }
 
 
@@ -31,7 +37,9 @@ body {
     background-color: fuchsia;
     display: grid;
     grid-template-columns: 1;
-    grid-template-rows: 1;
+    grid-template-rows: 1;  
+    justify-items: center;
+    align-items: center;  
 }
 
 #middle-container {
@@ -73,16 +81,28 @@ body {
 
 .blue-background {
     background-color: blue;
+    display: grid;
+    justify-items: center;
+    align-items: center;  
 }
 
 .red-background {
     background-color: red;
+    display: grid;
+    justify-items: center;
+    align-items: center;  
 }
 
 .lightgreen-background {
     background-color: lightgreen;
+    display: grid;
+    justify-items: center;
+    align-items: center;  
 }
 
 .purple-background {
     background-color: purple;
+    display: grid;
+    justify-items: center;
+    align-items: center;  
 }
