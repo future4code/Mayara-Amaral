@@ -51,6 +51,7 @@ section {
 article {
     width: 25%;
     height: auto;
+    text-align: center;
 }
 
 footer {
@@ -83,4 +84,33 @@ input {
 
 input:hover {
     background-color: #868483;
+}
+
+@media screen and (min-width: 300px) and (max-width: 1200px) {
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    section {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 80%;
+    }
+
+    article {
+        width: 80%;
+        text-align: center;
+    }
+
+    article img {
+        width: 100%;
+        height: auto;
+    }
+
+    .video {
+        width: 90%;
+    }
 }
