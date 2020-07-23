@@ -1,0 +1,86 @@
+/*formatações gerais*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Hind', sans-serif;
+}
+
+header {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header img{
+    width: 10%;
+    height: auto;
+    padding: 2%;
+}
+
+header h1 {
+    color: #F47711;
+    font-size: 3em;
+}
+
+main {
+    background-color: #868483;
+    display: flex;
+    justify-content: center;
+}
+
+main p {
+    border: 2px solid #868483;
+    padding: 1% 1%;
+    margin: 1%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+section {   
+    margin: 2%;
+    padding: 2%;
+    border-radius: 15px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;   
+}
+
+article {
+    width: 25%;
+    height: auto;
+}
+
+footer {
+    background-color: #F47711;
+    padding: 5%;
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/*Pagina de videos*/
+
+.video {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+video {
+    width: 100%;
+}
+
+input {
+    background-color: white;
+    width: 100px;
+    height: 50px;
+    margin: 2%;
+}
+
+input:hover {
+    background-color: #868483;
+}
