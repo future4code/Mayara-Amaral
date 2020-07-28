@@ -25,11 +25,11 @@
 //Exercício 1:
 
 let idade = Number(prompt("Qual é a sua idade?"))
-let idadeMelhorAmigo = Number(prompt("Qual é a idade //do seu melhor amigo ou melhor amiga?"))
+let idadeMelhorAmigo = Number(prompt("Qual é a idade do seu melhor amigo ou melhor amiga?"))
 
 let idadeEhMaior = idade > idadeMelhorAmigo
 
-console.log("Sua idade é maior do que a do seu melhor //amigo? " + idadeEhMaior)
+console.log("Sua idade é maior do que a do seu melhor amigo? " + idadeEhMaior)
 
 console.log(idade - idadeMelhorAmigo)
 
