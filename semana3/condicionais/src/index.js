@@ -92,13 +92,151 @@
 
 //2. 
 
-    let nomeCompleto = prompt("Digite seu nome completo: ").toLowerCase()
-    let tipoDeJogo = prompt("Digite o tipo de jogo: Se INTERNACIONAL, digite IN. Se DOMESTICO, digite DO.")
-    let etapaDoJogo = prompt("Digite a etapa do jogo: SF - semi-final,  DT - decisão 3º lugar ou  FI - final.")
+    let nomeCompleto = prompt("Digite seu nome completo: ").toUpperCase()
+    let tipoDeJogo = prompt("Digite o tipo de jogo: Se INTERNACIONAL, digite IN. Se DOMESTICO, digite DO.").toUpperCase()
+    let etapaDoJogo = prompt("Digite a etapa do jogo: SF - semi-final,  DT - decisão 3º lugar ou  FI - final.").toUpperCase()
     let categoria = Number(prompt("Digite a categoria: 1, 2, 3 ou 4"))
     let qtdeIngressos = Number(prompt("Digite a quantidade de ingressos:"))
+    let valor
+    let valorTotal 
+
+    if(tipoDeJogo === "IN"){
+        if(etapaDoJogo === "SF"){
+            switch(categoria){
+                case 1:
+                valor = 1320/4.10
+                break
+                case 2:
+                valor = 880/4.10
+                break
+                case 3:
+                valor = 550/4.10
+                break
+                case 4:
+                valor = 220/4.10
+                break
+                default: 
+                console.log("Digite uma categoria válida!")
+            }
+        } else if(etapaDoJogo === "DT") {
+            switch(categoria){
+                case 1:
+                valor = 660/4.10
+                break
+                case 2:
+                valor = 440/4.10
+                break
+                case 3:
+                valor = 330/4.10
+                break
+                case 4:
+                valor = 170/4.10
+                break
+                default: 
+                console.log("Digite uma categoria válida!")
+            }
+        } else if (etapaDoJogo === "FI"){
+            switch(categoria){
+                case 1:
+                valor = 1980/4.10 
+                break
+                case 2:
+                valor = 1320/4.10
+                break
+                case 3:
+                valor = 880/4.10
+                break
+                case 4:
+                valor = 330/4.10
+                break
+                default: 
+                console.log("Digite uma categoria válida!")
+            }
+        }
+
+        valorTotal = (valor * qtdeIngressos) + "US$"
+    
+        console.log(
+            "----Dados da compra----",
+            "Nome do cliente", nomeCompleto,
+            "Tipo de jogo:", tipoDeJogo,
+            "Etapa do jogo:", etapaDoJogo,
+            "Quantidade de ingressos", qtdeIngressos,
+            "-----Valores-----",
+            "Valor do ingresso:", valor,
+            "Valor Total:", valorTotal
+        )
+
+    } else if (tipoDeJogo === "DO") {
+        if(etapaDoJogo === "SF"){
+            switch(categoria){
+                case 1:
+                valor = 1320
+                break
+                case 2:
+                valor = 880
+                break
+                case 3:
+                valor = 550
+                break
+                case 4:
+                valor = 220
+                break
+                default: 
+                console.log("Digite uma categoria válida!")
+            }
+        } else if(etapaDoJogo === "DT") {
+            switch(categoria){
+                case 1:
+                valor = 660
+                break
+                case 2:
+                valor = 440
+                break
+                case 3:
+                valor = 330
+                break
+                case 4:
+                valor = 170
+                break
+                default: 
+                console.log("Digite uma categoria válida!")
+            }
+        } else if (etapaDoJogo === "FI"){
+            switch(categoria){
+                case 1:
+                valor = 1980
+                break
+                case 2:
+                valor = 1320
+                break
+                case 3:
+                valor = 880
+                break
+                case 4:
+                valor = 330
+                break
+                default: 
+                console.log("Digite uma categoria válida!")
+            }
+        }
+        
+        valorTotal = "R$" + (valor * qtdeIngressos)
+        
+        console.log(
+            "----Dados da compra----",
+            "Nome do cliente", nomeCompleto,
+            "Tipo de jogo:", tipoDeJogo,
+            "Etapa do jogo:", etapaDoJogo,
+            "Quantidade de ingressos", quantidade,
+            "-----Valores-----",
+            "Valor do ingresso:", valor,
+            "Valor Total:", valorTotal
+        )   
+    }
 
 
-  //  1 dólar = 4,10 reais
+
+  
 
 
