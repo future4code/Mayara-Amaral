@@ -100,3 +100,53 @@
 //3. 
     /*
         a.
+    */
+// ~~~~~~~~~~~~~~~ EXERCÍCIOS DE ESCRITA DE CÓDIGO ~~~~~~~~~~~~~~//
+
+//4. 
+    //a. 
+        function sobreMim() {
+            console.log(`Eu sou Mayara, tenho 22 anos, moro em Cuiabá, sou estudante e amo programação e desenhar.`)
+        }
+
+        sobreMim()
+    //b.
+        function sobre(nome, idade, cidade, estuda){
+            if(estuda === true) {
+                console.log(`Eu sou ${nome}, tenho ${idade}, moro em ${cidade}, e sou estudante.`)
+            }
+            else {
+                console.log(`Eu sou ${nome}, tenho ${idade}, moro em ${cidade}, e NÃO sou estudante`)
+            }
+        }
+
+        sobre("Mayara", 22, "Cuiabá", true)
+
+//5.
+    //a.
+        function somaDois(a, b){
+            return a + b
+        }
+
+        console.log(somaDois(2,2))
+    //b.
+        function doisNumeros(a, b){
+            if (a >= b) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+        console.log(doisNumeros(5,5))
+    
+    //c. 
+        function imprimeMensagem(mensagem) {
+           let texto = mensagem
+           for(let i = 0; i < 10; i++){
+                console.log(texto)
+           }        
+        }
+
+        imprimeMensagem("Oi, essa mensagem aparecerá 10x")
+        
