@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 /* ~~~~~~~~EXERCÍCIO DE INTERPRETAÇÃO DE CÓDIGO~~~~~~~~ */
 
 //Exercício 1:
@@ -236,10 +234,3 @@
             "Valor Total:", valorTotal
         )   
     }
-
-
-
-  
-
->>>>>>> 75daacd98d6d55ed000bb1367fa7c2e8f1f789b0
-
