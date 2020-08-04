@@ -99,7 +99,7 @@
     */
 //3. 
     /*
-        a.
+        A função recebe um array e devolve outro array com todos os números pares multiplicados por ele mesmo.
     */
 // ~~~~~~~~~~~~~~~ EXERCÍCIOS DE ESCRITA DE CÓDIGO ~~~~~~~~~~~~~~//
 
@@ -125,10 +125,12 @@
 //5.
     //a.
         function somaDois(a, b){
-            return a + b
+            const soma = a + b            
+            return soma
         }
 
-        console.log(somaDois(2,2))
+        const resultado = somaDois(2,5)
+        console.log(resultado)   
     //b.
         function doisNumeros(a, b){
             if (a >= b) {
@@ -138,7 +140,8 @@
             }
         }
 
-        console.log(doisNumeros(5,5))
+        const maior = doisNumeros(5, 6)
+        console.log(maior)
     
     //c. 
         function imprimeMensagem(mensagem) {
@@ -149,4 +152,67 @@
         }
 
         imprimeMensagem("Oi, essa mensagem aparecerá 10x")
+
+//6.
+    //a.
+        const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
         
+        function meuArray(n1, n2, n3, n4, n5, n6, n7, n8, n9, n10) {
+            const array = [n1, n2, n3, n4, n5, n6, n7, n8, n9, n10]
+            return array.length           
+        }
+
+        const tamanhoArray = meuArray(10, 23, 45, 78, 90, 52, 35, 67, 84, 22)
+        console.log(tamanhoArray)
+
+    //b.
+        function verificaPar(numero) {
+            if(numero % 2 === 0){
+                return true
+            } else {
+                return false
+            }
+        }
+
+        const numeroEhPar = verificaPar(2)
+        console.log(numeroEhPar)
+    
+    //c. 
+        function meuArray2(n1, n2, n3, n4, n5, n6, n7, n8, n9, n10){
+            const array2 = [n1, n2, n3, n4, n5, n6, n7, n8, n9, n10]
+            let numeroPar = []
+            
+            for (let i of array2) {
+                if(i%2 === 0){                    
+                    numeroPar.push(i)
+                }
+            }
+
+            return numeroPar
+        }
+
+        let numerosPares = meuArray2(10, 23, 45, 78, 90, 52, 35, 67, 84, 22)
+        console.log(numerosPares)
+    
+    //d. 
+        function meuArray2(n1, n2, n3, n4, n5, n6, n7, n8, n9, n10){
+            const array2 = [n1, n2, n3, n4, n5, n6, n7, n8, n9, n10]
+            let numeroPar = []
+
+            for (let i of array2) {
+                if(verificaPar(i)){                    
+                    numeroPar.push(i)
+                }
+            }
+
+            return numeroPar
+        }
+
+
+
+        let numerosPares2 = meuArray2(20, 22, 48, 75, 91, 52, 36, 68, 84, 22)
+        console.log(numerosPares2)
+
+
+
+            
