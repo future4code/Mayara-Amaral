@@ -1,4 +1,4 @@
-function adicionarTarefa(){
+function adicionarTarefa() {
     let tarefa = document.getElementById("tarefa")
     let tarefaValor = tarefa.value
     
@@ -9,17 +9,22 @@ function adicionarTarefa(){
     let horarioValor = horarios.value
 
     if(tarefaValor !== ""){ 
-        let tarefaDia = document.getElementById(`${diaDaSemana}`)
-        tarefaDia.innerHTML += `<p onclick="riscarTarefa()"><strong>${horarioValor}</strong> <br> ${tarefaValor}</p>`
-        tarefa.value = ""             
+        let diaDaTarefa = document.getElementById(`${diaDaSemana}`)
+        diaDaTarefa.innerHTML += `<p onclick="riscarTarefa()" class="items"><strong>${horarioValor}</strong><br>${tarefaValor}</p>`
+        tarefa.value = ""                                
     } else {
         alert("Digite uma tarefa válida!")
-    }   
+    }     
+        
 }
 
-function riscarTarefa(){
- 
-}
+/* INCOMPLETO
+    function riscarTarefa() {
+        let paragrafos = document.getElementsByClassName("items")     
+
+        paragrafos.item(i).style = "text-decoration: line-through"   
+    }
+*/
 
 function limparTodasAsTarefas() {
     let arraySemana = ["domingo", "segunda", "terca", "quarta", "quinta", "sexta", "sabado", "domingo"]
