@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="index.js"></script>
+    <title>Planner</title>
+</head>
+<body>
+    <header>
+        <form action="">
+            <label for="tarefa">Nova tarefa:</label>
+            <input type="text" id="tarefa">
+            <select name="dias-semana" id="dias-semana">
+                <option value="domingo">Domingo</option>
+                <option value="segunda">Segunda-feira</option>
+                <option value="terca">Terça-feira</option>
+                <option value="quarta">Quarta-feira</option>
+                <option value="quinta">Quinta-feira</option>
+                <option value="sexta">Sexta-feira</option>
+                <option value="sabado">Sábado</option>
+            </select>
+            <select name="horario" id="horarios">
+                <option value="00h00">00h00</option>
+                <option value="01h00">01h00</option>
+                <option value="02h00">02h00</option>
+                <option value="03h00">03h00</option>
+                <option value="04h00">04h00</option>
+                <option value="05h00">05h00</option>
+                <option value="06h00">06h00</option>
+                <option value="07h00">07h00</option>
+                <option value="08h00">08h00</option>
+                <option value="09h00">09h00</option>
+                <option value="10h00">10h00</option>
+                <option value="11h00">11h00</option>
+                <option value="12h00">12h00</option>
+                <option value="13h00">13h00</option>
+                <option value="14h00">14h00</option> 
+                <option value="15h00">15h00</option> 
+                <option value="16h00">16h00</option>
+                <option value="17h00">17h00</option> 
+                <option value="18h00">18h00</option> 
+                <option value="19h00">19h00</option>
+                <option value="21h00">21h00</option> 
+                <option value="22h00">22h00</option> 
+                <option value="23h00">23h00</option>                                 
+            </select>
+        </form>
+
+        <button onclick="adicionarTarefa()">Criar tarefa</button>
+        <button onclick="limparTodasAsTarefas()">Limpar Tarefas</button>
+        
+    </header>
+    <section>
+        <div class="semana">
+            <h3>Domingo</h3>
+            <div id="domingo">             
+            </div>
+        </div>
+
+        <div class="semana">
+            <h3>Segunda-feira</h3>
+            <div id="segunda"></div>
+        </div>
+
+        <div class="semana">
+            <h3>Terça-feira</h3>
+            <div id="terca"></div>
+        </div>
+    
+        <div class="semana">
+            <h3>Quarta-feira</h3>
+            <div id="quarta"></div>
+        </div>
+    
+        <div class="semana">
+            <h3>Quinta-feira</h3>
+            <div id="quinta"></div>
+        </div>
+
+        <div class="semana">                    
+            <h3>Sexta-feira</h3>               
+            <div id="sexta"></div>
+        </div>
+
+        <div class="semana">
+            <h3>Sábado</h3>
+            <div id="sabado"></div>
+        </div>
+    </section>
+    
+</body>
+</html>
