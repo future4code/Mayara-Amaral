@@ -27,15 +27,14 @@ function limparCampos() {
 }
 
 function inserirNaPagina() {
-        let paragrafoDeDespesa = document.getElementById("gastos") 
-        despesas.forEach(
+        let paragrafoDeDespesa = document.getElementById("gastos")         
         
         for (let item of despesas){
         paragrafoDeDespesa.innerHTML += criarParagrafo(item)
         }
 }
 
-function criarParagrafo(item) {
+function criarParagrafo(item) {]
     return `    <p>${item.tipoDeDespesa}</p> 
                 <p>${item.valor}</p>
                 <p>${item.descricao}</p>                
