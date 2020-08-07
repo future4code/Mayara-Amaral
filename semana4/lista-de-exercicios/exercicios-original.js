@@ -49,8 +49,20 @@ EXERCÍCIO 4.
     e) true.
 */
 
+// EXERCÍCIO 3.
+/* 
+    O código não funciona porque i inicializa com 0 e não há incremento, como i == 0, todo número multiplicado por 0 é zero. Logo só será impresso no console o número zero. 
+*/
 
+let quantidadeDeNumerosPares = Number(prompt("Digite um número"))
+let i = 1
+console.log(`0`)
+while(i <= quantidadeDeNumerosPares){
+    console.log(i*2)
+    i++
+}   
 
-  
+// EXERCÍCIO 4.
+
 
 
