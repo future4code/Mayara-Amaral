@@ -164,3 +164,14 @@ EXERCÍCIO 4.
     }
 
     console.log(criaRetangulo(50,20))
+
+//EXERCÍCIO 3.
+    
+    const filmeFavorito = {
+        titulo: `Extraordinário`,
+        ano: 2017,
+        diretor: `Stephen Chbosky`,
+        atores: [`Julia Roberts`,`Owen Wilson`, `Jacob Tremblay`]
+    }
+
+    console.log(`Venha assistir ao filme ${filmeFavorito.titulo}, de ${filmeFavorito.ano}, dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.atores[0]}, ${filmeFavorito.atores[1]},${filmeFavorito.atores[2]}`)
