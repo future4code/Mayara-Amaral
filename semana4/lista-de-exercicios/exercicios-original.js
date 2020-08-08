@@ -174,4 +174,22 @@ EXERCÍCIO 4.
         atores: [`Julia Roberts`,`Owen Wilson`, `Jacob Tremblay`]
     }
 
-    console.log(`Venha assistir ao filme ${filmeFavorito.titulo}, de ${filmeFavorito.ano}, dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.atores[0]}, ${filmeFavorito.atores[1]},${filmeFavorito.atores[2]}`)
+    console.log(`Venha assistir ao filme ${filmeFavorito.titulo}, de ${filmeFavorito.ano}, dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.atores[0]}, ${filmeFavorito.atores[1]}, ${filmeFavorito.atores[2]}`)
+
+//EXERCICIO 4.
+
+    const pessoa = {
+        nome: `Geovana`,
+        idade: 12,
+        email: `geovana@gmail.com`,
+        endereco: `Cuiabá, MT`
+    }
+
+    const ficarAnonimo = (pessoa) => {
+        pessoa.nome = `ANÔNIMO`
+        console.log(pessoa)
+    }
+
+ficarAnonimo(pessoa)
+
+/* ~~~~~~~~~~~~ EXERCÍCIOS DE FUNÇÃO DE ARRAY ~~~~~~~~~~~ */
