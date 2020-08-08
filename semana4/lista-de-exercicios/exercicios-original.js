@@ -50,31 +50,67 @@ EXERCÍCIO 4.
 */
 
 // EXERCÍCIO 3.
-/* 
-    O código não funciona porque i inicializa com 0 e não há incremento, como i == 0, todo número multiplicado por 0 é zero. Logo só será impresso no console o número zero. 
-*/
 
-let quantidadeDeNumerosPares = Number(prompt("Digite um número"))
-let i = 1
-console.log(`0`)
-while(i <= quantidadeDeNumerosPares){
-    console.log(i*2)
-    i++
-}   
+    /* 
+        O código não funciona porque i inicializa com 0 e não há incremento, como i == 0, todo número multiplicado por 0 é zero. Logo só será   impresso no console o número zero. 
+    */
+
+    let quantidadeDeNumerosPares = Number(prompt("Digite um número"))
+    let i = 1
+    console.log(`0`)
+    while(i <= quantidadeDeNumerosPares){
+        console.log(i*2)
+        i++
+    }   
 
 // EXERCÍCIO 4.
 
-const tipoTriangulo = (a, b, c) => {
-    let triangulo
-    if(a === b && b === c && a === c) {
-        return triangulo = "equilátero"
-    } else if (a === b || b === c || a === c) {
-        return triangulo = "isósceles"
-    } else {
-        return triangulo = "escaleno"
+    const tipoTriangulo = (a, b, c) => {
+        let triangulo
+        if(a === b && b === c && a === c) {
+            return triangulo = "equilátero"
+        } else if (a === b || b === c || a === c) {
+            return triangulo = "isósceles"
+        } else {
+            return triangulo = "escaleno"
+        }
     }
-}
 
-console.log(`O triângulo é ${ tipoTriangulo(2,1,2) }`)
+    console.log(`O triângulo é ${ tipoTriangulo(2,1,2) }`)
+
+// Exercício 5.
+
+    const numeroEhDivisivel = (a, b) => {    
+    if(a % b === 0 || b % a === 0) {
+       return verificaDivisao = "divisíveis"
+    } else {
+       return verificaDivisao = "não divisiveis"
+    }
+    }
+    
+    const verificaNumero = (a, b) => {
+        let diferencaDosNumeros
+        let verificacaoDoNumero
+        let verificaDivisao
+        if(a > b){
+            verificacaoDoNumero = ` ${a} é maior que ${b}`
+            diferencaDosNumeros = a - b
+        } else if (b > a) {
+            verificacaoDoNumero = `${b} é maior que ${a}`
+            diferencaDosNumeros = b - a
+        } else {
+            verificacaoDoNumero = `${a} e ${b} são iguais`
+            diferencaDosNumeros = 0
+        }
+    
+        verificaDivisao = numeroEhDivisivel(a, b)
+    
+        return `${verificacaoDoNumero}, a diferenca entre eles é ${diferencaDosNumeros} e são ${verificaDivisao} entre si`
+    }
+    
+    console.log(verificaNumero(20, 20))
+    
+    
+
 
 
