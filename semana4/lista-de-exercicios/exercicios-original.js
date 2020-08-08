@@ -64,5 +64,17 @@ while(i <= quantidadeDeNumerosPares){
 
 // EXERCÍCIO 4.
 
+const tipoTriangulo = (a, b, c) => {
+    let triangulo
+    if(a === b && b === c && a === c) {
+        return triangulo = "equilátero"
+    } else if (a === b || b === c || a === c) {
+        return triangulo = "isósceles"
+    } else {
+        return triangulo = "escaleno"
+    }
+}
+
+console.log(`O triângulo é ${ tipoTriangulo(2,1,2) }`)
 
 
