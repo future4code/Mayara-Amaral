@@ -18,7 +18,11 @@ EXERCÍCIO 4.
 
 */
 
+
+
 /* ~~~~~~~~~~~~ EXERCÍCIOS DE LÓGICA DE PROGRAMAÇÃO ~~~~~~~~~~~ */
+
+
 
 // EXERCÍCIO 1.
     const lista = [1, 2, "bananinha", "batmanDandoPirueta", 5, 7, 20, "Labenu"]
@@ -109,8 +113,14 @@ EXERCÍCIO 4.
     }
 
     console.log(verificaNumero(20, 20))
+    
 
-// EXERCÍCIO 6.
+
+/* ~~~~~~~~~~~~ EXERCÍCIOS DE FUNÇÕES ~~~~~~~~~~~ */
+
+
+
+// EXERCÍCIO 1.
 
     let listaDeNumeros = [3, 15 , 25 , 1 , 4 , 6 , 2 , 70, 10]
 
@@ -125,7 +135,7 @@ EXERCÍCIO 4.
     
     console.log(recebeArray(listaDeNumeros))
 
-// EXERCÍCIO 7.
+// EXERCÍCIO 2.
     const darHello = (texto) => {
         alert(`${texto}`)
     }
@@ -133,3 +143,24 @@ EXERCÍCIO 4.
     darHello("Hello Future4!")
 
 
+/* ~~~~~~~~~~~~ EXERCÍCIOS DE OBJETOS ~~~~~~~~~~~ */
+
+//EXERCÍCIO 1.
+    /*
+         Arrays e objetos são usados para armazenar varias coisas em uma única variavel. No caso dos arrays, ele armazena elementos. Em objetos ele armazena os elementos e suas propriedades. Os dois facilitam a escrita de código.
+    */
+
+//EXERCÍCIO 2.
+    
+    const criaRetangulo = (lado1, lado2) => {
+        let retangulo = {
+            largura: lado1,
+            altura: lado2,
+            perimetro: 2*(lado1 + lado2),
+            area: lado1*lado2
+        }
+
+        return retangulo
+    }
+
+    console.log(criaRetangulo(50,20))
