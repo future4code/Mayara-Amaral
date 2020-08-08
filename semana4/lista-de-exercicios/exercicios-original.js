@@ -87,7 +87,7 @@ EXERCÍCIO 4.
        return verificaDivisao = "não divisiveis"
     }
     }
-    
+
     const verificaNumero = (a, b) => {
         let diferencaDosNumeros
         let verificacaoDoNumero
@@ -102,15 +102,34 @@ EXERCÍCIO 4.
             verificacaoDoNumero = `${a} e ${b} são iguais`
             diferencaDosNumeros = 0
         }
-    
+
         verificaDivisao = numeroEhDivisivel(a, b)
-    
+
         return `${verificacaoDoNumero}, a diferenca entre eles é ${diferencaDosNumeros} e são ${verificaDivisao} entre si`
     }
-    
-    console.log(verificaNumero(20, 20))
-    
-    
 
+    console.log(verificaNumero(20, 20))
+
+// EXERCÍCIO 6.
+
+    let listaDeNumeros = [3, 15 , 25 , 1 , 4 , 6 , 2 , 70, 10]
+
+    function recebeArray(array) {
+        let arrayOrdenado = []
+        for(item of array){        
+            
+
+        }
+        return arrayOrdenado
+    }
+    
+    console.log(recebeArray(listaDeNumeros))
+
+// EXERCÍCIO 7.
+    const darHello = (texto) => {
+        alert(`${texto}`)
+    }
+
+    darHello("Hello Future4!")
 
 
