@@ -122,19 +122,25 @@ EXERCÍCIO 4.
 
 // EXERCÍCIO 1.
 
-    let listaDeNumeros = [3, 15 , 25 , 1 , 4 , 6 , 2 , 70, 10]
+    let listaDeNumeros = [0, 3, 15 , 25 , 1 , 4 , 6 , 2 , 70, 10]
 
     function recebeArray(array) {
         let arrayOrdenado = []
-        for(item of array){        
-            
+        let numero = 0
+        while(numero <= 70){            
+            for(item of array){            
+                if(item === numero) {
+                    arrayOrdenado.push(item)
+                }
+            }
+            numero++
+        }      
 
-        }
-        return arrayOrdenado
+        return ` ${arrayOrdenado} o segundo menor numero ${arrayOrdenado[1]} e o penúltimo maior número ${arrayOrdenado[8]}`
     }
     
     console.log(recebeArray(listaDeNumeros))
-
+    
 // EXERCÍCIO 2.
     const darHello = (texto) => {
         alert(`${texto}`)
@@ -193,3 +199,27 @@ EXERCÍCIO 4.
 ficarAnonimo(pessoa)
 
 /* ~~~~~~~~~~~~ EXERCÍCIOS DE FUNÇÃO DE ARRAY ~~~~~~~~~~~ */
+
+    let arrayDePessoas = [
+    	{ nome: "Pedro", idade: 20 },
+    	{ nome: "João", idade: 10 },
+    	{ nome: "Paula", idade: 12 },
+    	{ nome: "Artur", idade: 89 } 
+    ]
+
+//EXERCÍCIO 1.
+    //não tá funcionando
+    function selecionaAdultos(){
+        let adultos = []
+        let criancas = []
+        for(let pessoa of arrayDePessoas) {
+            if(pessoa.idade >= 20){
+                adultos.push(pessoa)
+            } else {
+                criancas.push(pessoa)
+            }
+        }
+        return `Os adultos: ${adultos}. As crianças: ${criancas}`
+    }
+
+    console.log(selecionaAdultos())
