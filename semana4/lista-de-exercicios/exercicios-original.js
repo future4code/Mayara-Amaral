@@ -262,7 +262,7 @@ ficarAnonimo(pessoa)
         array.forEach(verificaONumero)
         console.log(verificaSeONumeroEhPar)
 
-
+//EXERCÍCIO 3.  
 
         
 
