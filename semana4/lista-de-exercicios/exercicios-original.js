@@ -225,8 +225,53 @@ ficarAnonimo(pessoa)
     console.log(adultos)
     console.log('As crianças:')
     console.log(criancas)
-    
+
 // EXERCÍCIO 2
+    const array = [1, 2, 3, 4, 5, 6]
+
+    //a.      
+        const novoArray = []
+        const retorno = (elemento, index, array) => {
+            novoArray.push(elemento*2)
+        }
+
+        array.forEach(retorno)
+        console.log(novoArray)
+
+    //b.
+        const outroArray = []
+        const retornoString = (elemento, index, array) => {
+            let resultado = elemento*3
+            let resultadoEmString = resultado.toString()
+            outroArray.push(resultadoEmString)
+        }
+
+        array.forEach(retornoString)
+        console.log(outroArray)
+
+    //c.
+        let verificaSeONumeroEhPar = []
+        const verificaONumero = (elemento, index, array) => {
+            if(elemento % 2 === 0){
+                verificaSeONumeroEhPar.push(`${elemento} é par`)
+            } else {
+                verificaSeONumeroEhPar.push(`${elemento} é ímpar`)
+            }
+        }
+
+        array.forEach(verificaONumero)
+        console.log(verificaSeONumeroEhPar)
+
+
+
+        
+
+        
+
+
+
+    
+
 
     
 
