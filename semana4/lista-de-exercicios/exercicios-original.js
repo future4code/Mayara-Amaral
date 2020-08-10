@@ -302,11 +302,7 @@ ficarAnonimo(pessoa)
     	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
     	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
     ]
-
-    //Olá, ${ Sr./Sra. } ${ nome da pessoa }. Estamos enviando esta mensagem para
-    //        ${ lembrá-lo / lembrá-la } da sua consulta no dia ${ data da consulta }. Por favor, acuse
-    //        o recebimento deste e-mail.
-    //
+ 
     const email = consultas.map((elemento, index, array) => {
        
         if(elemento.cancelada === false) {
@@ -330,6 +326,29 @@ ficarAnonimo(pessoa)
 
     console.log(email)
 
+
+//EXERCICIO 05.
+
+    const contas = [
+    	{ cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+    	{ cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+    	{ cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+    	{ cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+    	{ cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+    	{ cliente: "Soter", saldoTotal: 1200, compras: [] }
+    ]
+
+    const atualizaSaldo = (elemento, index, array) => {
+        for(item of elemento.compras) {
+            elemento.saldoTotal = elemento.saldoTotal - item
+        }
+    }
+
+
+    contas.forEach(atualizaSaldo)
+    console.log(contas)
+
+  
 
 
     
