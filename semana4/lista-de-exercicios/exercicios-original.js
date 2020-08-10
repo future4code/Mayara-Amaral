@@ -207,19 +207,27 @@ ficarAnonimo(pessoa)
     	{ nome: "Artur", idade: 89 } 
     ]
 
-//EXERCÍCIO 1.
-    //não tá funcionando
-    function selecionaAdultos(){
-        let adultos = []
-        let criancas = []
-        for(let pessoa of arrayDePessoas) {
-            if(pessoa.idade >= 20){
-                adultos.push(pessoa)
-            } else {
-                criancas.push(pessoa)
-            }
+//EXERCÍCIO 1    
+    let adultos = []
+    let criancas = []
+
+    const callback = (elemento, index, array) => {
+        if(elemento.idade >= 20){
+            adultos.push(elemento)
+        } else {
+            criancas.push(elemento)
         }
-        return `Os adultos: ${adultos}. As crianças: ${criancas}`
     }
 
-    console.log(selecionaAdultos())
+    arrayDePessoas.forEach(callback)
+
+    console.log('Os adultos:')
+    console.log(adultos)
+    console.log('As crianças:')
+    console.log(criancas)
+    
+// EXERCÍCIO 2
+
+    
+
+    
