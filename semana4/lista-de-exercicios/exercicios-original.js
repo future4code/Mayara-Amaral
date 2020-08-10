@@ -294,7 +294,41 @@ ficarAnonimo(pessoa)
 
         console.log(pessoasQueNaoPodemBrincar)
 
-        
+//EXERCÍCIO 04.
+
+    const consultas = [
+    	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+    	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+    	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+    	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+    ]
+
+    //Olá, ${ Sr./Sra. } ${ nome da pessoa }. Estamos enviando esta mensagem para
+    //        ${ lembrá-lo / lembrá-la } da sua consulta no dia ${ data da consulta }. Por favor, acuse
+    //        o recebimento deste e-mail.
+    //
+    const email = consultas.map((elemento, index, array) => {
+       
+        if(elemento.cancelada === false) {
+            if(elemento.genero === 'feminino'){
+                return `Olá, Sra. ${elemento.nome}. Estamos enviando esta mensagem para lembrá-la da sua consulta no dia ${elemento.dataDaConsulta}.Por favor, acuse o recebimento deste e-mail`
+            } else {
+                return `Olá, Sr. ${elemento.nome}. Estamos enviando esta mensagem para lembrá-lo da sua consulta no dia ${elemento.dataDaConsulta}.Por favor, acuse o recebimento deste e-mail`
+            }            
+        } else {
+            if(elemento.genero === 'feminino'){
+                return `Olá, Sra. ${elemento.nome}. Infelizmente, sua consulta marcada
+                para o dia ${elemento.dataDaConsulta} foi cancelada. Se quiser, pode entrar em 
+                contato conosco para remarcá-la`
+            } else {
+                return  `Olá, Sr. ${elemento.nome}. Infelizmente, sua consulta marcada
+                para o dia ${elemento.dataDaConsulta} foi cancelada. Se quiser, pode entrar em 
+                contato conosco para remarcá-la`
+            }
+        }
+    })
+
+    console.log(email)
 
 
 
