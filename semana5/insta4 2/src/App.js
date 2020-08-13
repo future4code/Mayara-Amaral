@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Post from './components/Post/Post';
-import styled from './styled-components'
+import styled from ''
 
 const AdicionandoPost = styled.div `
   display: flex;
