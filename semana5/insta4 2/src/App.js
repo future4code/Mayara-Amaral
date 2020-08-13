@@ -28,8 +28,7 @@ const Botao = styled.button `
     box-shadow: 0 0 0 0;
     outline: 0;
     border-radius: 20px;
-    padding: 10px;
-    width: 100px;
+    padding: 10px;    
     :hover {
       font-weight: bold;
       color: white;
@@ -105,7 +104,8 @@ class App extends React.Component {
 
     return (
       <div>
-        {listaDePosts}
+        <div> {listaDePosts}</div>
+        
         <AdicionandoPost>
           <Entrada        
             value={this.state.valorInputNome}           

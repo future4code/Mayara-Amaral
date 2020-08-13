@@ -67,7 +67,13 @@ class Post extends React.Component {
     }
 
     return <div className={'post-container'}>
-      
+      <div className={'post-header'}>
+        <img className={'user-photo'} src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>  
+        <p>{this.props.nomeUsuario}</p>
+      </div>
+
+      <img className={'post-photo'} src={this.props.fotoPost} alt={'Imagem do post'}/>
+
       <div className={'post-footer'}>
         <IconeComContador
           icone={iconeCurtida}
