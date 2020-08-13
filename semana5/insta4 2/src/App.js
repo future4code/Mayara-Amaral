@@ -1,13 +1,41 @@
 import React from 'react';
 import './App.css';
 import Post from './components/Post/Post';
-import styled from ''
+import styled from 'styled-components'
 
 const AdicionandoPost = styled.div `
   display: flex;
   flex-direction: column;
-  background-color: red;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+  background-color: plum;  
   `
+const Entrada = styled.input `
+  border: none;
+  border-radius: 20px;
+  height: 30px;
+  margin: 5px;
+  :focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    border-bottom: 3px solid gray;
+  }
+`
+const Botao = styled.button `
+    border: 0 none;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100px;
+    :hover {
+      font-weight: bold;
+      color: white;
+      background-color: purple;
+    }
+`
 
 class App extends React.Component {
   state = {
@@ -79,22 +107,22 @@ class App extends React.Component {
       <div>
         {listaDePosts}
         <AdicionandoPost>
-        <input           
+          <Entrada        
             value={this.state.valorInputNome}           
             onChange={this.onChangeInputNome}
             placeholder={"Nome"}
-          />
-          <input
+          />   
+          <Entrada
             value={this.state.valorInputFotoUsuario}           
             onChange={this.onChangeInputFotoUsuario}
             placeholder={"FotoUsuario"}
           />
-          <input
+          <Entrada
             value={this.state.valorInputFotoPost}
             onChange={this.onChangeInputFotoPost}
             placeholder={"FotoPost"}
           />
-          <button onClick={this.adicionaPost}>Adicionar</button>
+          <Botao onClick={this.adicionaPost}>Adicionar</Botao>
         </AdicionandoPost>
       </div>
       
