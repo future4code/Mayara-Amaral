@@ -1,6 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const Container = styled.div `
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fefeee;
+`
+
+
 export class EtapaUm extends React.Component {
         state = {
             valorInputNome: "",
@@ -25,7 +36,7 @@ export class EtapaUm extends React.Component {
     render() {      
 
         return (
-        <div className="etapa1">
+        <Container>
             <h1>Etapa 1 - Dados Gerais</h1>
 
             <label for="nome">Qual o seu nome?</label>
@@ -44,9 +55,11 @@ export class EtapaUm extends React.Component {
                 <option>Ensino Superior Incompleto</option>
                 <option>Ensino Superior Completo</option>
             </select>
-            <button onClick={this.props.onClickVoltarEtapa}>Etapa Anterior</button>
-            <button onClick={this.props.onClickPularEtapa}>Próxima etapa</button>
-      </div>
+            <div>
+                <button onClick={this.props.onClickVoltarEtapa}>Etapa Anterior</button>
+                <button onClick={this.props.onClickPularEtapa}>Próxima etapa</button>
+            </div>
+      </Container>
         )
     }
 }
