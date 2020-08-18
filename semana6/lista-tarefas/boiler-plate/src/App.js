@@ -25,23 +25,19 @@ class App extends React.Component {
           id: Date.now(), // Explicação abaixo
           texto: 'Texto da tarefa',
           completa: false // Indica se a tarefa está completa (true ou false)
-        },
-        {
-          id: Date.now(), // Explicação abaixo
-	        texto: 'Texto da tarefa',
-          completa: true // Indica se a tarefa está completa (true ou false)
-        }
+        }        
       ],
       inputValue: '',
       filtro: 'pendentes'
     }
 
   componentDidUpdate() {
-
+    localStorage.setItem('guardarTarefas', JSON.stringify(this.state.tarefas))    
   };
 
   componentDidMount() {
-
+    const guardarTarefasString = localStorage.getItem("guardarTarefas")
+    const guardarTarefasObjeto = JSON.parse(guardarTarefasString)
   };
 
   onChangeInput = (event) => {
