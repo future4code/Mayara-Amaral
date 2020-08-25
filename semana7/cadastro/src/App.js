@@ -22,9 +22,9 @@ export class App extends React.Component {
   state = {
     InputNome: "",
     InputEmail: "",
-    users: ""
+    clicouNoBotao: false,
+    nomeBotao: "Ir para a página de usuários"    
   }
-
   
 //Requisições
 
@@ -47,24 +47,6 @@ criarUsuario = () => {
   })
 }
 
-  //Para pegar os usuários criados
-
-componentDidMount = () => {
-  this.pegarUsuarios();
-}
-
-pegarUsuarios = () => {
-  axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users', {
-    headers: {
-      Authorization: 'mayara-amaral-jackson'
-    }
-  }).then(response => {
-    this.setState({ user: response.data})
-  }).catch(erro => {
-    console.log('erro')
-  })
-}
-
 //Funções de capturar input
 
 onChangeInputNome = (event) => {
@@ -75,20 +57,25 @@ onChangeInputEmail = (event) => {
   this.setState({InputEmail: event.target.value})
   }
 
-  render() {    
+onClickBotao = () => {
+  this.setState({clicouNoBotao: !this.state.clicouNoBotao})
+  console.log(this.state.clicouNoBotao)
+}
+
+  render() {
+    
     return (
-      <div>
-        <button>Ir para a lista de usuários</button>
-        <Pagina>        
-          <CardCadastro>
+      <div>        
+        <button onClick={this.onClickBotao}>{this.state.clicouNoBotao ? "Voltar": "Ir para a lista de usuários"}</button>
+        <Pagina>
+          {this.state.clicouNoBotao ? <ListaDeUsuarios/> : <CardCadastro>            
             <h1>Cadastro de Usuário</h1>
             <PaginaCadastro 
               mudouInputNome={this.onChangeInputNome}
               mudouInputEmail={this.onChangeInputEmail}
              />
             <button onClick={this.criarUsuario}>Finalizar Cadastro</button>
-          </CardCadastro>    
-          <ListaDeUsuarios users={this.state.user} />
+          </CardCadastro> }
         </Pagina>
       </div>
     )
