@@ -21,11 +21,14 @@ const CardCadastro = styled.div `
 export class App extends React.Component {
   state = {
     InputNome: "",
-    InputEmail: ""
+    InputEmail: "",
+    users: ""
   }
 
   
 //Requisições
+
+  //Para criar o usuário
 
 criarUsuario = () => {
   const body = {
@@ -38,9 +41,27 @@ criarUsuario = () => {
       Authorization: 'mayara-amaral-jackson'
     }  
   }).then(response => {
-    console.log('sucesso')
+    alert('Usuário criado com sucesso!')
   }).catch(erro => {
-    console.log('deu ruim')
+    alert('Erro ao criar usuário.')
+  })
+}
+
+  //Para pegar os usuários criados
+
+componentDidMount = () => {
+  this.pegarUsuarios();
+}
+
+pegarUsuarios = () => {
+  axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users', {
+    headers: {
+      Authorization: 'mayara-amaral-jackson'
+    }
+  }).then(response => {
+    this.setState({ user: response.data})
+  }).catch(erro => {
+    console.log('erro')
   })
 }
 
@@ -54,8 +75,7 @@ onChangeInputEmail = (event) => {
   this.setState({InputEmail: event.target.value})
   }
 
-
-  render() {
+  render() {    
     return (
       <div>
         <button>Ir para a lista de usuários</button>
@@ -67,8 +87,8 @@ onChangeInputEmail = (event) => {
               mudouInputEmail={this.onChangeInputEmail}
              />
             <button onClick={this.criarUsuario}>Finalizar Cadastro</button>
-          </CardCadastro>      
-          <ListaDeUsuarios />
+          </CardCadastro>    
+          <ListaDeUsuarios users={this.state.user} />
         </Pagina>
       </div>
     )
