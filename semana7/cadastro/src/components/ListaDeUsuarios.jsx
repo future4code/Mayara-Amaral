@@ -2,6 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 
+const CardUsuarios = styled.div `
+    background-color: papayawhip;
+    width: 20%;
+    text-align: center;
+    border-radius: 20px;
+    `
+const Titulo = styled.h2 `
+    background-color: white;
+    margin: 2%;
+    border-radius: 20px;
+    `
+const Usuarios = styled.p `
+    color: brown;
+    font-weight: bold;
+`
+
 export class ListaDeUsuarios extends React.Component {
     state = {
         user: []
@@ -24,20 +40,18 @@ export class ListaDeUsuarios extends React.Component {
   
     componentDidMount = () => {
         this.pegarUsuarios();
-    }
-
-    
+    }   
     
     render() {           
         const todosOsUsuarios = this.state.user.map((item) => {
-            return <p key={item.id}>{item.name}</p>
+            return <Usuarios key={item.id}>{item.name}</Usuarios>
         })
         
         return (
-            <div>
-                <h2>Usuários</h2>
+            <CardUsuarios>
+                <Titulo>Usuários</Titulo>
                 {todosOsUsuarios}
-            </div>
+            </CardUsuarios>
         )
     }
 }

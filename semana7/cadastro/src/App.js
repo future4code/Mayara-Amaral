@@ -9,12 +9,30 @@ const Pagina = styled.div `
   justify-content: center;
 `
 const CardCadastro = styled.div `
+  width: 35%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid black;
+  background-color: papayawhip;
+  border-radius: 20px;
   padding: 20px;
 `
+const Titulo = styled.h1 `
+    text-align: center;
+    background-color: white;
+    margin: 2%;
+    border-radius: 20px;
+  `
+
+const Botao = styled.button `
+  background-color: black;
+  margin: 20px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  `
 
 //Classe
 
@@ -66,10 +84,10 @@ onClickBotao = () => {
     
     return (
       <div>        
-        <button onClick={this.onClickBotao}>{this.state.clicouNoBotao ? "Voltar": "Ir para a lista de usuários"}</button>
+        <Botao onClick={this.onClickBotao}>{this.state.clicouNoBotao ? "Voltar": "Ir para a lista de usuários"}</Botao>
         <Pagina>
           {this.state.clicouNoBotao ? <ListaDeUsuarios/> : <CardCadastro>            
-            <h1>Cadastro de Usuário</h1>
+            <Titulo>Cadastro de Usuário</Titulo>
             <PaginaCadastro 
               mudouInputNome={this.onChangeInputNome}
               mudouInputEmail={this.onChangeInputEmail}
