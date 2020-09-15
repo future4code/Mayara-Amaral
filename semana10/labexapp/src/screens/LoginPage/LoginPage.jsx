@@ -1,9 +1,11 @@
 import React from 'react';
+import Header from '../../components/Header/Header';
 import LoginAdm from '../../components/LoginAdm/LoginAdm'
 
 function LoginPage() {
   return (
-    <div>      
+    <div>
+      <Header />      
       <LoginAdm />
     </div>
   );
