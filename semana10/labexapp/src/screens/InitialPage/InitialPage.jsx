@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import InitialHeader from '../../components/Header/InitialHeader';
 import { goLoginPage, goPublicPage } from '../../router/goToPages';

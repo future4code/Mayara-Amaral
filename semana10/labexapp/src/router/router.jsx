@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Router, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import InitialPage from '../screens/InitialPage/InitialPage'
 import LoginPage from '../screens/LoginPage/LoginPage'
 import PublicPage from '../screens/PublicPage/PublicPage'
