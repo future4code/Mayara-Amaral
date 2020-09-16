@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from '../../components/Form/Form';
+import FormCreateTrip from '../../components/Form/FormCreateTrip';
 import Header from '../../components/Header/Header';
 
 function TravelRegistrationPage() {
@@ -7,7 +7,13 @@ function TravelRegistrationPage() {
     <div>
       <Header />      
       TravelRegistrationPage
-      <Form />
+      <FormCreateTrip 
+        nome={'Nome: '}
+        planeta={'Planeta: '}
+        descricao={'Descrição: '}
+        duracao={'Duração em dias: '}
+        data={'Data: '}        
+      />
     </div>
   );
 }

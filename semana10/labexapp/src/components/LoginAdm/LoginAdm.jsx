@@ -12,7 +12,7 @@ function LoginAdm() {
         <input type="email"/>
         <label>Senha: </label>
         <input type="password"/>
-        <button onClick={() => goTripsPage(history)}>Entrar</button>
+        <button  onClick={() => goTripsPage(history)}>Entrar</button>
       </form>
     </div>
   );
