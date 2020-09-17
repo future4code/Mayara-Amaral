@@ -8,7 +8,7 @@ export function useTrips() {
     const [trips, setTrips] = useState([])
 
     useEffect(() => {
-        axios.get(`${BaseUrl}trips`)
+        axios.get(`${BaseUrl}/trips`)
         .then( res => {
            setTrips(res.data.trips)
         })

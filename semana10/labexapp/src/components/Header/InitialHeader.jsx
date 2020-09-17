@@ -1,9 +1,10 @@
 import React from 'react'
+import {Title} from '../../styled/styled'
 
 function InitialHeader() {
     return (
         <div>
-            Cabeçalho inicial
+            <Title>LabeX</Title>
         </div>
     )
 }
