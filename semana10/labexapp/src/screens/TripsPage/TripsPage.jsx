@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import {Lista, SecondTitle} from '../../styled/styled'
 
+
 function TripsPage() {
   const theme = createMuiTheme({
     palette: {

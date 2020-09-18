@@ -4,8 +4,26 @@ import { useHistory } from "react-router-dom";
 import BaseUrl from "../../const-requests/const-requests"
 import { useInputValue } from "../../hooks/hooks";
 import { goTripsPage } from "../../router/goToPages";
+import Container from '@material-ui/core/Container';
+import Button from '@material-ui/core/Button';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import {Lista, SecondTitle} from '../../styled/styled'
+import TextField from '@material-ui/core/TextField';
+import {Formulario} from '../../styled/styled'
+
 
 function LoginAdm() {
+  const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: '#21333b',
+      },
+      secondary: {
+        main: '#21333B',
+      },
+    },
+  });
+
   const [email, setEmail] = useInputValue()
   const [password, setPassword] = useInputValue();
   const history = useHistory();
@@ -36,11 +54,19 @@ function LoginAdm() {
   };
 
   return (
-    <div>
-      <input value={email} onChange={setEmail} placeholder="E-mail" />
-      <input value={password} onChange={setPassword} placeholder="Senha" type="password" />
-      <button onClick={handleLogin}>Fazer Login</button>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Container maxWidth='sm'>
+        <SecondTitle>Login</SecondTitle>
+          <Formulario>
+            
+            <TextField color='primary' margin='dense' variant='outlined' value={email} onChange={setEmail} placeholder="E-mail" />
+            <TextField color='primary' margin='dense' variant='outlined' value={password} onChange={setPassword} placeholder="Senha" type="password" />
+            <Button variant='contained' color='primary' onClick={handleLogin}>Fazer Login</Button>
+
+          </Formulario>
+
+      </Container>
+    </ThemeProvider>
   );
 }
 
