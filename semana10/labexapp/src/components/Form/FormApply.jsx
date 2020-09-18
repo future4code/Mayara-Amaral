@@ -1,8 +1,26 @@
 import React from 'react'
 import { Apply, useInputValue } from '../../hooks/hooks';
 import { useTrips } from '../../hooks/hooks';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Button from '@material-ui/core/Button';
+import {Formulario} from '../../styled/styled'
+import TextField from '@material-ui/core/TextField';
+import Select from '@material-ui/core/Select';
 
 const FormApply = () => {
+    const theme = createMuiTheme({
+        palette: {
+          primary: {
+            main: '#21333b',
+          },
+          secondary: {
+            main: '#21333B',
+          },
+        },
+      });
+
+
     const [nome, setNome] = useInputValue()
     const [idade, setIdade] = useInputValue()
     const [porque, setPorque] = useInputValue()
@@ -21,30 +39,30 @@ const FormApply = () => {
     }
 
     return (
-        <div>
-            <form>
-                <label>Nome:</label>
-                <input value={nome} onChange={setNome}/>
+        <ThemeProvider theme={theme}>
+          <Container maxWidth="sm">
 
-                <label>Idade:</label>
-                <input value={idade} onChange={setIdade}/>
+            <Formulario>
+                <TextField color='primary' label='Nome:' margin='dense' variant='outlined' value={nome} onChange={setNome}/>
 
-                <label>Porque você deveria ser escolhido: </label>
-                <input value={porque} onChange={setPorque}/>
+                <TextField label='Idade: ' margin='dense' variant='outlined' value={idade} onChange={setIdade}/>
 
-                <label>Profissão:</label>
-                <input value={profissao} onChange={setProfissao}/>
+                <TextField label='Porque você quer viajar' margin='dense' variant='outlined' rows='5' value={porque} onChange={setPorque}/>
 
-                <label>País de origem:</label>
-                <input value={pais} onChange={setPais}/>
+                <TextField label='Profissão' margin='dense' variant='outlined' value={profissao} onChange={setProfissao}/>
 
-                <label>Viagem:</label>
-                <select value={id} onChange={setId}>
+                <TextField label='País de origem:' margin='dense' variant='outlined' value={pais} onChange={setPais}/>
+                <br />
+                <label>Escolha sua viagem:</label>
+                <br />
+                <Select variant='outlined' labelWidth='10' value={id} onChange={setId}>
                   {tripsOptions}
-                </select>                
-            </form>
-            <button onClick={createApply}>Enviar</button>
-        </div>
+                </Select>                
+                <Button variant='contained' color='primary' onClick={createApply}>Enviar</Button>
+            </Formulario>
+
+          </Container>
+        </ThemeProvider>
     )
 }
 

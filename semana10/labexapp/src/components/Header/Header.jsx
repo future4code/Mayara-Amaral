@@ -1,10 +1,11 @@
 import React from 'react'
+import {Cabecalho} from '../../styled/styled'
 
 function Header() {
     return (
-        <div>
-            Cabeçalho
-        </div>
+        <Cabecalho>
+           <h2>LabeX</h2>
+        </Cabecalho>
     )
 }
 

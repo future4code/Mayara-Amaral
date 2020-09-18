@@ -69,6 +69,6 @@ export function Apply(nome, idade, porque, profissao, pais, viagem){
     .then(res => {
         console.log(res)
     }).catch(err => {
-        console.log(err)
+        alert('Preencha todos os campos')
     })
 }

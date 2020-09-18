@@ -1,7 +1,23 @@
 import React from 'react'
 import { useInputValue, usePostTrip } from '../../hooks/hooks';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Button from '@material-ui/core/Button';
+import {Formulario} from '../../styled/styled'
+import TextField from '@material-ui/core/TextField';
 
 const FormCreateTrip = (props) => {
+    const theme = createMuiTheme({
+        palette: {
+          primary: {
+            main: '#21333b',
+          },
+          secondary: {
+            main: '#21333B',
+          },
+        },
+      });
+
     const [nome, setNome] = useInputValue()
     const [planeta, setPlaneta] = useInputValue()
     const [descricao, setDescricao] = useInputValue()
@@ -13,26 +29,29 @@ const FormCreateTrip = (props) => {
     }
 
     return (
-        <div>
-            <form>
-                <label>{props.nome}</label>
-                <input value={nome} onChange={setNome} />
+        <ThemeProvider theme={theme}>
 
-                <label>{props.planeta}</label>
-                <input value={planeta} onChange={setPlaneta} />
+        <Container maxWidth="sm">
+            <Formulario>
 
-                <label>{props.descricao}</label>
-                <input value={descricao} onChange={setDescricao} />
+                <TextField color='primary' label={props.nome} margin='dense' variant='outlined' value={nome} onChange={setNome} />
 
-                <label>{props.duracao}</label>
-                <input value={duracao} onChange={setDuracao} />
+                <TextField color='primary' label={props.planeta} margin='dense' variant='outlined' value={planeta} onChange={setPlaneta} />
 
-                <label>{props.data}</label>
-                <input value={data} onChange={setData} type="date"/>
-            </form>
+                <TextField color='primary' label={props.descricao} margin='dense' variant='outlined' value={descricao} onChange={setDescricao} />
 
-            <button onClick={CreateTrip}>Cadastrar</button>
-        </div>
+                <TextField color='primary' label={props.duracao} margin='dense' variant='outlined' value={duracao} onChange={setDuracao} />
+                <br />
+                <label>Data da viagem:</label>
+                <br />
+                <TextField color='primary' margin='dense' variant='outlined' value={data} onChange={setData} type="date"/>
+
+                <Button variant='contained' color='primary' onClick={CreateTrip}>Cadastrar</Button>
+            </Formulario>
+
+        </Container>
+
+        </ThemeProvider>
     )
 }
 

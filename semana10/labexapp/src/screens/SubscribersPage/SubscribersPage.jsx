@@ -6,9 +6,27 @@ import { useTrips, useInputValue } from '../../hooks/hooks';
 import { RenderSubscribers } from '../../components/RenderSubscribers/RenderSubscribers';
 import { useHistory } from 'react-router-dom';
 import {goSubscribersPage , goLoginPage} from '../../router/goToPages'
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Button from '@material-ui/core/Button';
+import {Formulario} from '../../styled/styled'
+import TextField from '@material-ui/core/TextField';
+import Select from '@material-ui/core/Select';
+import {SecondTitle} from '../../styled/styled'
 
 
 function SubscribersPage() {
+  const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: '#21333b',
+      },
+      secondary: {
+        main: '#21333B',
+      },
+    },
+  });
+
   const token = window.localStorage.getItem("token")
   const history = useHistory()
 
@@ -43,22 +61,23 @@ function SubscribersPage() {
 
 
   return (
-    <div>
-      <Header />      
-      SubscribersPage
-      <div>
-
-        <select value={trip} onChange={setTrip}>
-          {tripsOptions}
-        </select>
-        <button onClick={() => requestDetails()}>Selecionar viagem</button>
+    <ThemeProvider theme={theme}>
+      <Header />
+        <Container maxWidth='sm'>
+          <SecondTitle>Selecione a viagem para ver os detalhes</SecondTitle>
         
-      </div>
-      
-      {renderTrip ? <RenderSubscribers renderTrip={renderTrip} /> : "" }
+          <Formulario>
 
-     
-    </div>
+            <Select value={trip} onChange={setTrip}>
+              {tripsOptions}
+            </Select>
+            <Button variant='contained' color='primary' onClick={() => requestDetails()}>Selecionar viagem</Button>
+
+          </Formulario>
+
+          {renderTrip ? <RenderSubscribers renderTrip={renderTrip} /> : "" }
+        </Container>      
+    </ThemeProvider>
   );
 }
 
