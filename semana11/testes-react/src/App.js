@@ -11,6 +11,10 @@ const App = () => {
   };
 
   const addPost = () => {
+    if(inputValue === ''){
+      return alert('Preencha o campo')
+    }
+
     // Adiciona um post à lista
     const newPost = {
       id: Date.now(),
@@ -21,6 +25,7 @@ const App = () => {
     const newPostsList = [newPost, ...postsList];
 
     setPostsList(newPostsList);
+    setInputValue("")
   };
 
   const deletePost = postId => {
@@ -61,7 +66,8 @@ const App = () => {
         <button onClick={addPost}>Adicionar</button>
       </div>
       <br />
-      {postsList.map(post => {
+      {postsList.length === 0 ? 'Nenhum post' :
+      postsList.map(post => {
         return (
           <Post
             key={post.id}
@@ -71,6 +77,8 @@ const App = () => {
           />
         );
       })}
+
+      <p>Quantidade de posts: {postsList.length}</p>
     </div>
   );
 };
