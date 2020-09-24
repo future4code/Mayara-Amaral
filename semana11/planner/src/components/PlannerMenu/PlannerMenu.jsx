@@ -1,8 +1,8 @@
-import Axios from 'axios';
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect } from 'react'
 import { BaseUrl } from '../../assets/ConstRequest/ConstRequest';
-import { useInput, useTasks } from '../../hooks/Request';
-import { Menu } from '../../styled/styled';
+import { useInput } from '../../hooks/Request';
+import { Menu , Button, Input, Select} from '../../styled/styled';
 
 function PlannerMenu() {
     const [Tasks, setTasks] = useInput()
@@ -13,8 +13,16 @@ function PlannerMenu() {
             text: Tasks,
             day: DayTasks
         }
+        
+        if(Tasks === '') {           
+            return  alert('Escreva uma tarefa')
+        }
 
-        Axios.post(`${BaseUrl}`, Task)
+        if(DayTasks === ''){
+            return alert('Selecione um dia')
+        }
+
+        axios.post(`${BaseUrl}`, Task)
         .then(res => {
             alert('Tarefa adicionada com sucesso')
         })
@@ -25,9 +33,9 @@ function PlannerMenu() {
 
     return (
         <Menu>
-            <input value={Tasks} onChange={setTasks} placeholder="Digite a tarefa" />
-            <select value={DayTasks} onChange={setDayTasks}>
-                <option defaultValue='Selecione o dia'> Selecione o dia</option>
+            <Input value={Tasks} onChange={setTasks} placeholder="Digite a tarefa" />
+            <Select value={DayTasks} onChange={setDayTasks}>
+                <option defaultValue='Selecione o dia'>Selecione o dia</option>
                 <option>Domingo</option>
                 <option>Segunda</option>
                 <option>Terça</option>
@@ -36,8 +44,8 @@ function PlannerMenu() {
                 <option>Sexta</option>
                 <option>Sábado</option>
 
-            </select>
-            <button onClick={addTasks}>Adicionar Tarefa</button>
+            </Select>
+            <Button onClick={addTasks}>Adicionar Tarefa</Button>
         </Menu>
         
     )

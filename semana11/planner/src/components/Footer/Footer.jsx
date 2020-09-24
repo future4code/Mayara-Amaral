@@ -1,8 +1,9 @@
 import React from 'react'
+import {Rodape} from '../../styled/styled'
 
 function Footer() {
     return (
-        <p>Footer</p>
+        <Rodape>Footer</Rodape>
     )
 }
 

@@ -1,8 +1,11 @@
 import React from 'react'
+import {Cabecalho, PlannerDay} from '../../styled/styled'
 
 function Header() {
     return (
-        <p>Header</p>
+        <Cabecalho>
+           
+        </Cabecalho>
     )
 }
 

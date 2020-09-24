@@ -1,5 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
 import PlannerDays from '../../components/PlannerDays/PlannerDays';
 import PlannerMenu from '../../components/PlannerMenu/PlannerMenu';
 
@@ -9,10 +11,12 @@ function PlannerPage() {
 
     return (
         <div>
+            <Header />
             <PlannerMenu />
             <div>
                 <PlannerDays/>                        
             </div>
+            <Footer />
         </div>
     )
 }
