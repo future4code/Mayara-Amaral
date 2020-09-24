@@ -1,11 +1,24 @@
 import React from 'react'
-import {PlannerDay} from '../../styled/styled'
+import {PlannerWeek} from '../../styled/styled'
+import { useTasks } from '../../hooks/Request'
 
-function PlannerDays(props) {
+function PlannerDays() {
+    const tarefas = useTasks()
+    const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
+
     return (
-        <PlannerDay>
-            <h3>{props.dia}</h3>
-        </PlannerDay>
+        <PlannerWeek>
+            {weekDays.map((item) => {
+                return <div key={item}>
+                            <h2>{item}</h2>
+                            {tarefas.map((tarefa) => {
+                                if(tarefa.day === item) {
+                                    return <p key={tarefa.id}>{tarefa.text}</p>
+                                }
+                            })}
+                        </div>
+            })}
+        </PlannerWeek>
     )
 }
 
