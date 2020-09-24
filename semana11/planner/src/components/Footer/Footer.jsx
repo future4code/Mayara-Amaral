@@ -3,7 +3,9 @@ import {Rodape} from '../../styled/styled'
 
 function Footer() {
     return (
-        <Rodape>Footer</Rodape>
+        <Rodape>
+            <p> &copy;  2020 - Planner</p>
+        </Rodape>
     )
 }
 
