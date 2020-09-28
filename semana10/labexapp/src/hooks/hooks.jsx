@@ -2,11 +2,13 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 import BaseUrl from '../const-requests/const-requests'
 
+
+//Pega todas as viagens disponíveis
 export function useTrips() {
     const [trips, setTrips] = useState([])
 
     useEffect(() => {
-        axios.get(`${BaseUrl}trips`)
+        axios.get(`${BaseUrl}/trips`)
         .then( res => {
            setTrips(res.data.trips)
         })
@@ -19,15 +21,18 @@ export function useTrips() {
     return trips
 }
 
+//lida com input controlado
 export function useInputValue() {
     const [valor, atualizaValor] = useState("")
 
     const lidaValor = (e) => {
-        atualizaValor(e.target.value)
+        atualizaValor(e.target.value)        
     }
 
     return [valor, lidaValor]
 }
+
+//isso daqui não é um hook, é uma requisição
 
 export function usePostTrip(nome, planeta, data, descricao, duracao) {
     const body = {
@@ -47,6 +52,23 @@ export function usePostTrip(nome, planeta, data, descricao, duracao) {
         console.log(res)
     })
     .catch(err => {
+        console.log(err)
+    })
+}
+
+export function Apply(nome, idade, porque, profissao, pais, viagem){
+    const body = {
+        name: nome,
+        age: idade,
+        applicationText: porque,
+        profession: profissao,
+        country: pais
+    }
+
+    axios.post(`${BaseUrl}trips/${viagem}/apply`, body)
+    .then(res => {
+        console.log(res)
+    }).catch(err => {
         console.log(err)
     })
 }

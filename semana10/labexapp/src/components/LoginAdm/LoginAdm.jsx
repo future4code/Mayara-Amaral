@@ -1,19 +1,45 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
-import { goTripsPage } from '../../router/goToPages';
+import React, { useEffect } from "react";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
+import BaseUrl from "../../const-requests/const-requests"
+import { useInputValue } from "../../hooks/hooks";
+import { goTripsPage } from "../../router/goToPages";
 
 function LoginAdm() {
-  const history = useHistory()
-  
+  const [email, setEmail] = useInputValue()
+  const [password, setPassword] = useInputValue();
+  const history = useHistory();
+
+  useEffect(() => {
+    const token = window.localStorage.getItem("token");
+
+    if (token) {
+      goTripsPage(history)
+    }
+  }, [history]);
+
+  const handleLogin = () => {
+    const body = {
+      email: email,
+      password: password
+    };
+
+    axios
+      .post(`${BaseUrl}/login`, body)
+      .then((response) => {
+        localStorage.setItem("token", response.data.token);
+        goTripsPage(history);
+      })
+      .catch((err) => {
+        alert('Insira um e-mail e uma senha válida')
+      });
+  };
+
   return (
     <div>
-      <form>
-        <label>E-mail: </label>
-        <input type="email"/>
-        <label>Senha: </label>
-        <input type="password"/>
-        <button  onClick={() => goTripsPage(history)}>Entrar</button>
-      </form>
+      <input value={email} onChange={setEmail} placeholder="E-mail" />
+      <input value={password} onChange={setPassword} placeholder="Senha" type="password" />
+      <button onClick={handleLogin}>Fazer Login</button>
     </div>
   );
 }
