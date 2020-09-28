@@ -6,6 +6,6 @@ export function useInput() {
     const lidaValor = (e) => {
         setInput(e.target.value)        
     }
-
+    
     return [input, lidaValor]
 }

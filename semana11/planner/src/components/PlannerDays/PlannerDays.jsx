@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {PlannerWeek, PlannerDay, Button} from '../../styled/styled'
+import {PlannerWeek, PlannerDay, Button, Day} from '../../styled/styled'
 import { BaseUrl } from '../../assets/ConstRequest/ConstRequest'
 import axios from 'axios'
 
@@ -27,7 +27,7 @@ function PlannerDays() {
     return (
         <PlannerWeek>
             {weekDays.map((item) => {
-                return <div key={item}>
+                return <Day key={item}>
                             <PlannerDay>{item}</PlannerDay>
                             {tasks.map((tarefa) => {
                                 if(tarefa.day === item) {
@@ -37,7 +37,7 @@ function PlannerDays() {
                                            </p>
                                 }
                             })}
-                        </div>
+                        </Day>
             })}
         </PlannerWeek>
     )

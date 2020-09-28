@@ -37,6 +37,7 @@ export const Select = styled.select `
 export const Menu = styled.div `
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     padding: 2%;
 `
 
@@ -57,6 +58,7 @@ export const Button = styled.button `
     cursor: pointer;
     margin: 5px;
     background-color: #F3D8C7;
+    box-shadow: 3px 3px 5px #E0D8C7;
     :hover {
         background-color: #FBFEFB;
     }
@@ -112,4 +114,16 @@ export const Logo = styled.img `
     overflow: hidden;
     width: 200px;
     
+`
+
+export const Day = styled.div `
+    background-color: #FBFEFB;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-left: 2px solid #F3D8C7;
+    border-bottom: 2px solid #F3D8C7;
+    box-shadow: -3px 3px 8px #F3D8C7;
+    :hover {
+        background-color: #F9F6F5;
+    }
 `

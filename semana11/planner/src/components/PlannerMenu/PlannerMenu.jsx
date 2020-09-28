@@ -25,6 +25,7 @@ function PlannerMenu() {
         axios.post(`${BaseUrl}`, Task)
         .then(res => {
             alert('Tarefa adicionada com sucesso')
+            setTasks('')
         })
         .catch(err => {
             console.log(err)
