@@ -1,31 +1,35 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom';
+import axios from 'axios'
+import { BaseUrl } from '../../constants/constants';
+import useInput from '../../hooks/useInput';
 
 export function LoginPage() {
     const history = useHistory()
-    const [form, setForm] = useState({ email: '', password: ''})
 
-    const handleInputEvent = (event) => {
-        const { name, value } = event.target
-        setForm({...form, [name]: value})
+    const [emailValue, setEmail] = useInput()
+    const [passwordValue, setPassword] = useInput()
+
+    const fazerLogin = () => {
+        const body =  {
+            email: emailValue,
+            password: passwordValue
+        }
+
+        axios.post(`${BaseUrl}login`, body)
+        .then(res => {
+            localStorage.setItem("token", res.data.token)
+            history.push("/")
+        })
+        .catch(err => console.log(err))
     }
 
     return (
         <div>
-            LoginPage
-            <input 
-                name="email"
-                value={form.email}
-                onChange={handleInputEvent}
-                type="email"
-            />
-            <input 
-                name="password"
-                value={form.password}
-                onChange={handleInputEvent}
-                type="password"
-            />     
-
+            <p>LoginPage</p>
+            <input type="email" value={emailValue} onChange={setEmail}/>
+            <input type="password" value={passwordValue} onChange={setPassword}/>
+            <button onClick={fazerLogin}>Fazer login</button>
         </div>
     )
 }

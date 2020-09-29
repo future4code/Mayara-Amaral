@@ -11,7 +11,7 @@ export function Navigation() {
     return (
         <AppBar>
             <Toolbar>
-                <ButtonGroup fullWidth="true" variant="contained" color="secondary" aria-label="contained primary button group">
+                <ButtonGroup fullWidth={true} variant="contained" color="secondary" aria-label="contained primary button group">
                     <Button onClick={() => goFeedPage(history)}><HomeIcon /></Button>
                     <Button onClick={() => goToLoginPage(history)}>login</Button>
                     <Button onClick={() => goToPostPage(history)}>Post</Button>

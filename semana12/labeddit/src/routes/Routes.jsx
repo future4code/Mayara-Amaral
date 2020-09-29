@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { FeedPage } from '../screens/FeedPage/FeedPage'
 import LoginPage from '../screens/LoginPage/LoginPage'
 import PostPage from '../screens/PostPage/PostPage'
