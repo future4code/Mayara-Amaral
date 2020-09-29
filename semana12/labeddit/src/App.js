@@ -15,16 +15,12 @@ function App() {
   return (  
 
     <ThemeProvider theme={theme}>
-      <Container maxWidth='xs'>
-
         <BrowserRouter> 
             <Space>
               <Navigation />
             </Space>       
             <Routes />       
-        </BrowserRouter>
-
-      </Container>
+        </BrowserRouter>     
     </ThemeProvider>
 
  

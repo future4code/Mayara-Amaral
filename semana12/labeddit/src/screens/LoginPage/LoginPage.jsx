@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import { BaseUrl } from '../../constants/constants';
 import useInput from '../../hooks/useInput';
+import { Group } from '../SingUpPage/styled';
 
 export function LoginPage() {
     const history = useHistory()
@@ -25,12 +26,12 @@ export function LoginPage() {
     }
 
     return (
-        <div>
+        <Group>
             <p>LoginPage</p>
-            <input type="email" value={emailValue} onChange={setEmail}/>
-            <input type="password" value={passwordValue} onChange={setPassword}/>
+            <input type="email" value={emailValue} onChange={setEmail} />
+            <input type="password" value={passwordValue} onChange={setPassword} />
             <button onClick={fazerLogin}>Fazer login</button>
-        </div>
+        </Group>
     )
 }
 

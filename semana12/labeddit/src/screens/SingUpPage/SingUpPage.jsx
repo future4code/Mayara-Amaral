@@ -3,15 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { BaseUrl } from '../../constants/constants';
 import useInput from '../../hooks/useInput';
 import axios from 'axios'
-import styled from 'styled-components'
-
-const Group = styled.div `
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: space-between;
-`
-
+import { Group } from './styled';
 
 export function SingUpPage() {
     const history = useHistory()
@@ -20,7 +12,7 @@ export function SingUpPage() {
     const [passwordValue, setPassword] = useInput()
     const [userNameValue, setUserName] = useInput()
 
-    const fazerLogin = () => {
+    const fazerCadastro = () => {
         const body =  {            
             email: emailValue,
             password: passwordValue,
@@ -41,7 +33,7 @@ export function SingUpPage() {
             <input type="text" value={userNameValue} onChange={setUserName}/>
             <input type="email" value={emailValue} onChange={setEmail}/>
             <input type="password" value={passwordValue} onChange={setPassword}/>
-            <button onClick={fazerLogin}>Fazer login</button>
+            <button onClick={fazerCadastro}>Fazer login</button>
         </Group>
     )
 }
