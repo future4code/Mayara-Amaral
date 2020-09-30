@@ -27,9 +27,10 @@ export function PostPage() {
         getPosts()
     }, ([]))
 
+
     return (
         <div>
-            <CardPost posts={posts} />
+            <CardPost posts={posts}/>
         </div>
     )
 }

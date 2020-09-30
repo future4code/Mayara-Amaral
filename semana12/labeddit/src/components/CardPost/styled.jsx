@@ -29,5 +29,6 @@ export const CardActions = styled.div `
 `
 
 export const CardArrows = styled.div `
-    font-weight: bold;  
+    font-weight: bold;
+    cursor: pointer;  
 `
