@@ -25,7 +25,7 @@ export function FeedPage() {
      
     useEffect(() => {
         getPosts()
-    }, ([]))
+    }, [])
 
     return (
         <div>

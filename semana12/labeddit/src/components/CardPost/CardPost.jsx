@@ -21,17 +21,20 @@ function CardPost(props) {
                Authorization: token
            }
         })
-        .then(res => console.log(res))
+        .then(res => console.log(res.data.sucess))
         .catch(err => console.log(err))
     }
 
-    return (
-        <div>
-            {props.posts.map((item) => {
-                const {commentsCount, createdAt, id, text, title, userVoteDirection, username, votesCount} = item
+    const renderizaPost = () => {
+        const postList = props.posts.map((item) => {
+            return item
+        })        
+    
+        return postList.map((item) => {
+            const {commentsCount, createdAt, id, text, title, userVoteDirection, username, votesCount} = item
 
-                return (
-                    <CardMargin key={id}>
+            return (
+                <CardMargin key={id}>
 
                         <CardContainer >
 
@@ -56,10 +59,15 @@ function CardPost(props) {
 
                         </CardContainer>
 
-                    </CardMargin>                
-                    
-                )
-            })}
+                    </CardMargin>               
+
+            )
+        })
+        }
+
+    return (
+        <div>
+           {renderizaPost()}
         </div>
     )
 }

@@ -3,7 +3,9 @@ import { useHistory } from 'react-router-dom';
 import { BaseUrl } from '../../constants/constants';
 import useInput from '../../hooks/useInput';
 import axios from 'axios'
-import { Group } from './styled';
+import { Group, InputGroup } from './styled';
+import { Button, TextField } from '@material-ui/core';
+import { ButtonContainer } from './styled';
 
 export function SingUpPage() {
     const history = useHistory()
@@ -29,11 +31,35 @@ export function SingUpPage() {
 
     return (
         <Group>
-            <p>SignUpPage</p>
-            <input type="text" value={userNameValue} onChange={setUserName}/>
-            <input type="email" value={emailValue} onChange={setEmail}/>
-            <input type="password" value={passwordValue} onChange={setPassword}/>
-            <button onClick={fazerCadastro}>Fazer login</button>
+            <InputGroup>
+                <TextField  
+                    margin='dense' 
+                    variant='outlined' 
+                    type="text"
+                    label={'Nome de usuário'} 
+                    value={userNameValue} 
+                    onChange={setUserName}
+                />
+                <TextField
+                    margin='dense' 
+                    variant='outlined'  
+                    type="email" 
+                    label={'Email'} 
+                    value={emailValue} 
+                    onChange={setEmail}
+                />
+                <TextField
+                    margin='dense' 
+                    variant='outlined'  
+                    type="password" 
+                    label={'Senha'}  
+                    type="password" 
+                    value={passwordValue} 
+                    onChange={setPassword}
+                />
+
+                <Button variant='contained' color='primary' size='large' onClick={fazerCadastro}>Fazer Cadastro</Button>
+            </InputGroup> 
         </Group>
     )
 }
