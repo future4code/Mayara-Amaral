@@ -9,8 +9,13 @@ import { Button, TextField } from '@material-ui/core';
 export function LoginPage() {
     const history = useHistory()
 
+    const token = localStorage.getItem('token')
     const [emailValue, setEmail] = useInput()
     const [passwordValue, setPassword] = useInput()
+
+    if(token){
+        history.push('/')
+    }
 
     const fazerLogin = () => {
         const body =  {

@@ -7,13 +7,18 @@ import HomeIcon from '@material-ui/icons/Home';
 
 export function Navigation() {
     const history = useHistory()
+    const token = localStorage.getItem("token")   
+
+    const LogOut = () => {
+        localStorage.clear()
+    }
 
     return (
         <AppBar>
             <Toolbar>
                 <ButtonGroup fullWidth={true} variant="contained" color="secondary" aria-label="contained primary button group">
                     <Button onClick={() => goFeedPage(history)}><HomeIcon /></Button>
-                    <Button onClick={() => goToLoginPage(history)}>login</Button>
+                    {token ? <Button onClick={LogOut}>Logout</Button> : <Button onClick={() => goToLoginPage(history)}>login</Button>}                    
                     <Button onClick={() => goToPostPage(history)}>Post</Button>
                     <Button onClick={() => goToSingUpPage(history)}>Cadastro</Button>
                 </ButtonGroup>                

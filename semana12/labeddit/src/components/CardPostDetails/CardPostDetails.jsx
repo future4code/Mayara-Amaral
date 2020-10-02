@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { BaseUrl } from '../../constants/constants'
 import { Container, PostContainer, CommentContainer, InputContainer } from './styled'
+import { Button, TextField } from '@material-ui/core'
+import AddComment from '../AddComment/AddComment'
 
 function CardPostDetails(props) {
     const pathParams = useParams()
@@ -48,13 +50,7 @@ function CardPostDetails(props) {
                              )}
                             </div>
                         </div>
-
-                        <InputContainer>
-                            <input placeholder="Nome de usuário"/>    
-                            <textarea rows="5" placeholder="Comentário"/>
-                            <button>Comentar</button>
-                        </InputContainer>
-                        
+                        <AddComment id={id}/>
                     </CommentContainer>
                 </div>
             </PostContainer>

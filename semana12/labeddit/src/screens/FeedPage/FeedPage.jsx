@@ -24,8 +24,11 @@ export function FeedPage() {
     }   
      
     useEffect(() => {
+        if(token === null){
+            history.push('/Login')
+        }
         getPosts()
-    }, [])
+    }, [history])
 
     return (
         <div>
