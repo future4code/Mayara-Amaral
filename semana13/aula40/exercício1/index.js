@@ -7,8 +7,15 @@ console.log("hello world")
     const idade = Number(process.argv[3])
 
 //b.
+    if(nome && idade){
+        console.log(`Olá, ${nome}! Você tem ${idade} anos`)
+    } else if (nome === undefined){
+        console.log("Não recebi o primeiro parâmetro")
+    } else {
+        console.log("Não recebi o segundo parâmetro")
+    }
 
-    console.log(`Olá, ${nome}! Você tem ${idade} anos`)
+    
     // npm run start "Mayara" 22
 
 //c.
