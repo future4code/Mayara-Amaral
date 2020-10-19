@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import FormCreateTrip from '../../components/Form/FormCreateTrip';
 import Header from '../../components/Header/Header';
 import { goLoginPage, goTravelRegistrationPage } from '../../router/goToPages';
+import {SecondTitle} from '../../styled/styled'
 
 function TravelRegistrationPage() {
   const token = window.localStorage.getItem("token")
@@ -19,7 +20,7 @@ function TravelRegistrationPage() {
   return (
     <div>
       <Header />      
-      TravelRegistrationPage
+      <SecondTitle>Cadastro de viagens</SecondTitle>
       <FormCreateTrip 
         nome={'Nome: '}
         planeta={'Planeta: '}

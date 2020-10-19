@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from '../../components/Form/FormApply';
 import Header from '../../components/Header/Header';
+import {SecondTitle} from '../../styled/styled'
 
 
 function PublicPage() {
@@ -8,8 +9,8 @@ function PublicPage() {
 
   return (
     <div>
-      <Header />      
-      Public Page
+      <Header />
+      <SecondTitle>Formulário de Cadastro</SecondTitle>
       <Form/>
     </div>
   );
