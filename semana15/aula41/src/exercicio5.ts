@@ -1,6 +1,6 @@
 // EXERCÍCIO 5.
 
-    export const imprimeNumeros = (a: number, b: number, operacao: string) => {
+    export const imprimeNumeros = (a: number, b: number, operacao: string): void => {
         switch(operacao){
             case "soma":
                 console.log( a + b )
