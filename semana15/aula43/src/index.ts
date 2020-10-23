@@ -43,19 +43,28 @@ app.use(cors())
 
 //EXERCÍCIO 3.
     //a. query params.
+    //b.
     
-        app.get("/users", (res: Response, req: Request) => {
-            console.log("afffff")
+        app.get("/user", (req: Request, res: Response) => {
+            const busca: string = String(req.query.name).toLowerCase()
+            try {
+                const userByName = users.filter(user => user.name.toLowerCase().includes(busca))
 
-            const usersByName = users.filter(user => user.name.includes(req.query.name as string))
-
-            res.status(200).send(usersByName)
+                if(!userByName.length){
+                    throw new Error()
+                }
+                
+                res.status(200).send(userByName)
+            } catch (error) {
+                res.status(404).send({message: "Não foi encontrado nenhum usuário"})
+            }           
+           
         
         })
 
-    //b.
+    
     
 
 
 
-app.listen(3002, () => {console.log("Servidor rodando...")})
+app.listen(3003, () => {console.log("Servidor rodando...")})
