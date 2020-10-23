@@ -27,7 +27,7 @@ app.use(cors())
         age: number
     }
 
-    app.get("/users/:type", (req: Request, res: Response) => {
+    app.get("/users/search/:type", (req: Request, res: Response) => {
         try {
             const listOfUsers = users.filter((user) => user.type === req.params.type)          
 
@@ -45,7 +45,7 @@ app.use(cors())
     //a. query params.
     //b.
     
-        app.get("/user", (req: Request, res: Response) => {
+        app.get("/users/query", (req: Request, res: Response) => {
             const busca: string = String(req.query.name).toLowerCase()
             try {
                 const userByName = users.filter(user => user.name.toLowerCase().includes(busca))
@@ -62,8 +62,60 @@ app.use(cors())
         
         })
 
+//EXERCÍCIO 4.
     
-    
+        app.post("/add", (req: Request, res: Response) => {
+            const novoUsuario: user = { 
+                id: req.body.id,
+                name: req.body.name,
+                email: req.body.email,
+                type: req.body.type,
+                age: req.body.age
+            }
+
+            try {
+                if(!req.body.id || !req.body.name || !req.body.email || !req.body.type || !req.body.age) {
+                    throw new Error()
+                }
+
+                users.push(novoUsuario)    
+
+                res.status(200).send("Usuário criado com sucesso!")            
+            } catch (error) {
+                res.status(400).send({message: "Não foi possível adicionar usuário. Corrija os dados."})
+            }
+        })
+
+        //a. Nada mudou, continuou dando sucesso na requisição.
+        //b. não, pois o método put serve para alterar dados, e não adicionar novos usuarios.
+
+//EXERCÍCIO 5
+
+    app.put("/users/search/:name/alterar", (req: Request, res: Response) => {
+        const usuarioAlterado: user = {
+            id: req.body.id,
+            name: req.body.name,
+            email: req.body.email,
+            type: req.body.type,
+            age: req.body.age
+        }
+
+        users.filter((user, index) => {
+            if(user.name === req.params.name){
+                users.slice(index, 1)            
+            }
+        })
+
+        try {
+            users.push(usuarioAlterado)
+            res.status(200).send("Usuário alterado com sucesso!")
+        } catch (error) {
+            res.status(400).send({message: "Não foi possível alterar o usuário, verifique todos os campos."})
+        }
+
+
+    })
+        
 
 
 
