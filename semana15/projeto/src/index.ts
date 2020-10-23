@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-//TYPES
+// TYPES
 type conta = {
     nome: string,
     cpf: number,
@@ -28,17 +28,17 @@ type usuario = {
 // GUARDAR CONTAS
 let contas: Array<conta> = []
 
-//GUARDAR USUARIOS
+// GUARDAR USUARIOS
 let usuarios: Array<usuario> = []
 
 
-//PEGA TODAS AS CONTAS
+// PEGA TODAS AS CONTAS
 
 app.get("/contas", (req: Request, res: Response) => {
     console.log(contas)
 })
 
-//CRIA UMA CONTA
+// CRIA UMA CONTA
 
 app.post("/criarConta", (req: Request, res: Response) => {
     
@@ -57,14 +57,14 @@ app.post("/criarConta", (req: Request, res: Response) => {
         saldo: 0
     }
 
-    //verifica idade
+    // verifica idade
     const hoje: Date = new Date()
     
     const idade: number = hoje.getTime() - diaDeNascimento.getTime()
 
     const idadeEmAnos: number = idade/1000/60/60/24/365
 
-    //mensagem de erro customizada
+    // smensagem de erro customizada
     let errorMessage: string = "Não foi possível criar usuário, revise os dados."
 
 
@@ -95,6 +95,15 @@ app.post("/criarConta", (req: Request, res: Response) => {
 
     }
 
+})
+
+app.get("/verificaSaldo", (req: Request, res: Response) => {
+    try {
+        const usuarioFiltrado = contas.filter(conta => conta.cpf === Number(req.query.cpf))
+        console.log(usuarioFiltrado[0].saldo)
+    } catch (error) {
+        
+    }
 })
 
 app.listen(3003, ()=> {console.log("servidor rodando..")})
