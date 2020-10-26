@@ -78,3 +78,11 @@ c. SELECT id, name, synopsis FROM Movies WHERE rating > 7;
 
 ## Exercício 7
 
+a. SELECT * FROM Movies WHERE name LIKE "%vida%";
+
+b. SELECT * FROM Movies WHERRE name LIKE "%elite%" OR synopsis LIKE "%feliz%";
+
+c. SELECT * FROM Movies WHERE release_Data < "2020-01-01";
+
+d. SELECT * FROM Movies WHERE (release_Data < "2020-01-01") AND (name LIKE "%elite%" OR synopsis LIKE "%dona%") AND (rating > 7);
+
