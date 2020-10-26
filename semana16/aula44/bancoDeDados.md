@@ -1,4 +1,4 @@
-Exercício 1
+## Exercício 1
 
 a. O comando CREATE TABLE cria a tabela, o comando VARCHAR(255) cria uma coluna do tipo string com tamanho máximo de 255. O comando DATE cria uma coluna com o tipo data, e o comando NOT NULL não deixa que aquele campo seja nulo.
 
@@ -6,7 +6,7 @@ b. O comando SHOW DATABASES me mostrou o banco de dados em que estou e o comando
 
 c. O comando DESCRIBE Actor me mostrou todas as colunas e suas especificações da tabela Actor.
 
-Exercício 2
+## Exercício 2
 
 a. INSERT INTO Actor (id, name, salary, birth_date, gender)
    VALUES ("002", "Glória Pires", 1200000, "1963-08-23", "female");
@@ -21,7 +21,7 @@ e. Código de erro: 1292. Valor de data incorreto: '1950' para a coluna 'birth_d
 
 f. Adicionei Fernanda Souza e Caio Castro.
 
-Exercício 3
+## Exercício 3
 
 a. SELECT * FROM Actor WHERE gender = "female";
 
@@ -33,7 +33,7 @@ d. SELECT id, name, salary FROM Actor WHERE salary <= 500000;
 
 e. Código de erro: 1054. Coluna desconhecida 'nome' na 'lista de campos'. Na tabela, nome está em inglês, e foi passado em português.
 
-Exercício 4
+## Exercício 4
 
 a. SELECT * FROM Actor WHERE (name LIKE "A%" OR name LIKE "J%") AND salary > 300000;
 Selecione todos os atores, onde o nome comece com a letra A ou com a letra J e que o salário seja maior que trezentos mil reais.
@@ -44,4 +44,29 @@ c. SELECT * FROM Actor WHERE name LIKE "%g%" OR name LIKE "%G%";
 
 d. SELECT * FROM Actor WHERE (name LIKE "%g%" OR name LIKE "%G%" OR name LIKE "%A%" OR name LIKE "%a%") AND (salary BETWEEN 350000 AND 900000);
 
-Exercício 5
+## Exercício 5
+
+a. CREATE TABLE Movies (
+	id VARCHAR(255) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE,
+    synopsis TEXT NOT NULL,
+    release_Data DATE NOT NULL,
+    rating INT NOT NULL
+);
+
+O tipo TEXT não tem tamanho definido de memória.
+
+b. INSERT INTO Movies (id, name, synopsis, release_data, rating)
+VALUES("002","Se eu fosse você", "Cláudio e Helena são casados há muitos anos e enfrentam a rotina do casamento. Um dia eles são atingidos por um fenômeno inexplicável e trocam de corpos", "2006/01/06", 7);
+
+c. INSERT INTO Movies (id, name, synopsis, release_data, rating)
+VALUES("003","Doce de mãe", "Dona Picucha, uma animada senhora de 85 anos, sempre causa grandes confusões. A vida dela e dos seus quatro filhos sofre uma reviravolta depois que Zaida, empregada e amiga de Dona Picucha, anuncia que vai se casar e não poderá mais morar com ela", "2012/12/27", 10);
+
+d. INSERT INTO Movies (id, name, synopsis, release_data, rating)
+VALUES("004","Dona Flor e Seus Dois Maridos", "Dona Flor é uma sedutora professora de culinária casada com Vadinho, que só quer saber de farras e jogatina nas boates. A vida de abusos acaba por acarretar sua morte precoce.", "2017/11/02", 8);
+
+e. INSERT INTO Movies (id, name, synopsis, release_data, rating)
+VALUES("005","Tropa de Elite", "O capitão da força especial da Polícia Militar do Rio de Janeiro treina dois recrutas novatos para que possam sucedê-lo.", "2007/10/05", 9);
+
+## Exercício 6
+
