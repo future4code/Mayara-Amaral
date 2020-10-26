@@ -70,3 +70,11 @@ VALUES("005","Tropa de Elite", "O capitão da força especial da Polícia Milita
 
 ## Exercício 6
 
+a. SELECT id, name, rating FROM Movies WHERE id = "002";
+
+b. SELECT * FROM Movies WHERE name = "Tropa de Elite";
+
+c. SELECT id, name, synopsis FROM Movies WHERE rating > 7;
+
+## Exercício 7
+
