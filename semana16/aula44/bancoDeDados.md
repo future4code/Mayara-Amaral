@@ -33,4 +33,15 @@ d. SELECT id, name, salary FROM Actor WHERE salary <= 500000;
 
 e. Código de erro: 1054. Coluna desconhecida 'nome' na 'lista de campos'. Na tabela, nome está em inglês, e foi passado em português.
 
+Exercício 4
 
+a. SELECT * FROM Actor WHERE (name LIKE "A%" OR name LIKE "J%") AND salary > 300000;
+Selecione todos os atores, onde o nome comece com a letra A ou com a letra J e que o salário seja maior que trezentos mil reais.
+
+b. SELECT * FROM Actor WHERE (name NOT LIKE "A%") AND salary > 350000;
+
+c. SELECT * FROM Actor WHERE name LIKE "%g%" OR name LIKE "%G%";
+
+d. SELECT * FROM Actor WHERE (name LIKE "%g%" OR name LIKE "%G%" OR name LIKE "%A%" OR name LIKE "%a%") AND (salary BETWEEN 350000 AND 900000);
+
+Exercício 5
