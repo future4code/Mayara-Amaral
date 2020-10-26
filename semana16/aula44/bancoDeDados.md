@@ -21,5 +21,16 @@ e. Código de erro: 1292. Valor de data incorreto: '1950' para a coluna 'birth_d
 
 f. Adicionei Fernanda Souza e Caio Castro.
 
+Exercício 3
+
+a. SELECT * FROM Actor WHERE gender = "female";
+
+b. SELECT salary FROM Actor WHERE name = "Tony Ramos";
+
+c. SELECT * FROM Actor WHERE gender = "invalid"; Retornou todos os campos que estão NULL, no caso a última linha da tabela, provavelmente, porque são inválidos.
+
+d. SELECT id, name, salary FROM Actor WHERE salary <= 500000;
+
+e. Código de erro: 1054. Coluna desconhecida 'nome' na 'lista de campos'. Na tabela, nome está em inglês, e foi passado em português.
 
 
