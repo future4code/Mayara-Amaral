@@ -67,3 +67,6 @@ WHERE id = "005";`
 **D.**
 > `SELECT SUM(salary) FROM Actor;`
 
+## Exercício 5:
+**A.** A query agrupa os itens da tabela de acordo com o "gender", como há apenas dois gêneros, feminino e masculino, ele agrupa a quantidade de mulheres e a quantidade de homens.
+
