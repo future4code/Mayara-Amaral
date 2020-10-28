@@ -2,7 +2,8 @@ import express, {Express, Request, Response} from 'express'
 import cors from 'cors'
 import knex from 'knex'
 import dotenv from 'dotenv'
-import { getActorFromId } from './endpoints/getActorFromId'
+import { getActorById } from './endpoints/getActorById'
+import { getActorByName } from './endpoints/getActorByName'
 
 dotenv.config()
 
@@ -22,6 +23,8 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
-app.get("/pegarAtor/:id", getActorFromId);
+app.get("/getActorById/:id", getActorById);
+
+app.get("/getActorByName/:name", getActorByName);
 
 app.listen(3003, () => {console.log("Servidor rodando...")})

@@ -1,9 +1,3 @@
-# EXERCÍCIOS 
-## Exercício 1:
-**A.** A resposta da query quando usamos raw vem o que solicitamos mais o metadados.
-
-**B.** 
-```ts
 import {connection} from '../index'
 
 export const selectActorByName = async (name: string): Promise<any> => {
@@ -13,7 +7,4 @@ export const selectActorByName = async (name: string): Promise<any> => {
 
     console.log(result[0])
     return result   
-} 
-```
-
-**C.**
+}
