@@ -4,6 +4,7 @@ import knex from 'knex'
 import dotenv from 'dotenv'
 import { getActorById } from './endpoints/getActorById'
 import { getActorByName } from './endpoints/getActorByName'
+import { getCountByGender } from './endpoints/getCountByGender'
 
 dotenv.config()
 
@@ -26,5 +27,7 @@ app.use(cors());
 app.get("/getActorById/:id", getActorById);
 
 app.get("/getActorByName/:name", getActorByName);
+
+app.get("/getCountByGender/:gender", getCountByGender)
 
 app.listen(3003, () => {console.log("Servidor rodando...")})
