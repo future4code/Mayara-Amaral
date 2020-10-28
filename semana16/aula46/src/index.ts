@@ -1,11 +1,12 @@
-import express, {Express} from 'express'
+import express, {Express, Request, Response} from 'express'
 import cors from 'cors'
 import knex from 'knex'
 import dotenv from 'dotenv'
+import { getActorFromId } from './endpoints/getActorFromId'
 
 dotenv.config()
 
-const connection = knex({
+export const connection = knex({
     client: "mysql",
     connection: {
         host: process.env.DB_HOST,
@@ -16,9 +17,11 @@ const connection = knex({
     }
 })
 
-const app: Express = express()
+const app: Express = express();
 
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
+
+app.get("/pegarAtor/:id", getActorFromId);
 
 app.listen(3003, () => {console.log("Servidor rodando...")})
