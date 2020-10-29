@@ -7,6 +7,6 @@ export const AverageByGender = async (gender: string): Promise<any> => {
     .where({gender})
 
     const average = `${result[0].average}`
-    console.log(average)
+    
     return average
 }
