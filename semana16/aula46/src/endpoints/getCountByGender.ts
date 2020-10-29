@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { selectCountByGender } from "../data/seletCountByGender";
+import { selectCountByGender } from "../data/selectCountByGender";
 
 export const getCountByGender = async (req: Request, res: Response) => {
     try {

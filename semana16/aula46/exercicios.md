@@ -32,3 +32,34 @@ export const selectCountByGender = async (gender: string): Promise<any> => {
 }
 
 ```
+
+## Exercício 2
+
+**A.**
+```ts
+    export const updateSalaryById = async (
+        id: string,
+        salary: number
+    ): Promise<void> => {
+        const result = await connection("Actor")
+            .update({
+                salary: salary,
+            })
+            .where("id", id)
+    }
+```
+
+**B.**
+```ts
+    export const deleteActor = async (id: string): Promise<void> => {
+        await connection("Actor")
+        .delete()
+        .where("id", id)
+    }
+```
+
+**C.**
+
+```ts
+    
+```
