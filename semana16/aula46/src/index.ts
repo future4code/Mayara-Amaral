@@ -31,7 +31,7 @@ app.get("/getActorById/:id", getActorById);
 
 app.get("/getActorByName/:name", getActorByName);
 
-app.get("/getCountByGender/:gender", getCountByGender)
+app.get("/getCountByGender", getCountByGender)
 
 app.patch("/salaryUpdate/:id", patchSalaryById)
 
