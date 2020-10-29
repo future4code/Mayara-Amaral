@@ -5,6 +5,7 @@ import dotenv from 'dotenv'
 import { getActorById } from './endpoints/getActorById'
 import { getActorByName } from './endpoints/getActorByName'
 import { getCountByGender } from './endpoints/getCountByGender'
+import { patchSalaryById } from './endpoints/patchSalaryById'
 
 dotenv.config()
 
@@ -29,5 +30,7 @@ app.get("/getActorById/:id", getActorById);
 app.get("/getActorByName/:name", getActorByName);
 
 app.get("/getCountByGender/:gender", getCountByGender)
+
+app.patch("/salaryUpdate/:id", patchSalaryById)
 
 app.listen(3003, () => {console.log("Servidor rodando...")})
