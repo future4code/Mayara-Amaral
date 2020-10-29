@@ -7,6 +7,7 @@ import { getActorByName } from './endpoints/getActorByName'
 import { getCountByGender } from './endpoints/getCountByGender'
 import { patchSalaryById } from './endpoints/patchSalaryById'
 import { deleteActorById } from './endpoints/deleteActorById'
+import { getAverageByGender } from './endpoints/getAverageByGender'
 
 dotenv.config()
 
@@ -35,5 +36,7 @@ app.get("/getCountByGender/:gender", getCountByGender)
 app.patch("/salaryUpdate/:id", patchSalaryById)
 
 app.delete("/deleteActor/:id", deleteActorById)
+
+app.get("/getAverage/:gender", getAverageByGender)
 
 app.listen(3003, () => {console.log("Servidor rodando...")})
