@@ -109,3 +109,50 @@ export const getCountByGender = async (req: Request, res: Response) => {
     }
 }
 ```
+
+## Exercício 4
+
+** Endpoint que adiciona um novo ator **
+```ts
+    import { Request, Response } from "express";
+    import { createActor } from "../data/createActor";
+
+    export const putNewActor = async (req: Request, res: Response) =>  {
+        try {
+            const id = req.body.id
+            const name = req.body.name
+            const salary = req.body.salary
+            const birth_date = new Date (req.body.birth_date)
+            const gender = req.body.gender  
+
+            await createActor(id, name, salary, birth_date, gender)
+
+            res.status(200).send("Ator adicionado com sucesso!")
+
+        } catch (error) {
+            res.send(error)
+        }
+    }
+
+```
+
+**A.**
+```ts
+    
+```
+
+**B.**
+```ts
+    import { Request, Response } from "express"
+    import { deleteActor } from "../data/deleteActor"
+
+    export const deleteActorById = async (req: Request, res: Response) => {
+        try {
+            const result = deleteActor(req.params.id)
+
+            res.status(200).send("Ator deletado com sucesso!")
+        } catch (error) {
+            res.send(error)
+        }
+}
+```
