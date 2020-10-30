@@ -2,7 +2,7 @@ import express, {Express} from 'express'
 import cors from 'cors'
 import dotenv from "dotenv"
 import knex from 'knex'
-import { createUser } from '../endpoints/createUser';
+import { createUser } from './endpoints/createUser';
 
 dotenv.config();
 
