@@ -3,6 +3,7 @@ import cors from 'cors'
 import dotenv from "dotenv"
 import knex from 'knex'
 import { createUser } from './endpoints/createUser';
+import { getUserById } from './endpoints/getUserById';
 
 dotenv.config();
 
@@ -22,6 +23,8 @@ export const connection = knex({
     }
 })
 
-app.put("/user", createUser)
+//app.put("/user", createUser)
+
+app.get("/user/:id", getUserById)
 
 app.listen(3003, () => {console.log("Servidor funcionando")})
