@@ -4,6 +4,7 @@ import dotenv from "dotenv"
 import knex from 'knex'
 import { createUser } from './endpoints/createUser';
 import { getUserById } from './endpoints/getUserById';
+import { postUserById } from './endpoints/postUserById';
 
 dotenv.config();
 
@@ -23,8 +24,10 @@ export const connection = knex({
     }
 })
 
-//app.put("/user", createUser)
+app.put("/user", createUser)
 
 app.get("/user/:id", getUserById)
+
+app.post("/user/edit/:id", postUserById)
 
 app.listen(3003, () => {console.log("Servidor funcionando")})
