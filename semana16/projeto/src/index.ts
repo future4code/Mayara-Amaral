@@ -11,7 +11,7 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
-const connection = knex({
+export const connection = knex({
     client: "mysql",
     connection: {
         host: process.env.DB_HOST,
