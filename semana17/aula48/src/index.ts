@@ -3,6 +3,7 @@ import cors from 'cors'
 import knex from 'knex'
 import dotenv from 'dotenv'
 import { getAllUsers } from './endpoints/getAllUsers'
+import { getOrderedUsers } from './endpoints/getOrderedUsers'
 
 dotenv.config()
 
@@ -22,5 +23,7 @@ app.use(express.json())
 app.use(cors())
 
 app.get("/users", getAllUsers)
+
+app.get("/users/:type", getOrderedUsers)
 
 app.listen(3003, () => console.log("Servidor rodando na porta 3003"))

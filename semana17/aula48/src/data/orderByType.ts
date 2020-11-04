@@ -1,15 +1,16 @@
 import { connection } from ".."
 import { user } from "../types/user"
 
-export const orderByName = async (order: string): Promise<user[]> => {
+export const orderByType = async (type: string): Promise<user[]> => {
     try {
         const result = await connection.raw(`
             SELECT * FROM aula48_exercicio 
-            ORDER BY name ASC
+            WHERE type LIKE "%${type}%";
             `)
-        if(!order) {
-            throw new Error()
-        }
+
+        if(!result[0]) {
+            throw new Error("Nada foi encontrado")
+        }        
         
         return result[0]
     } catch (error) {

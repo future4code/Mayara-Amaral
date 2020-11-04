@@ -10,7 +10,7 @@ export const getAllUsers = async(req: Request,res: Response): Promise<void> =>{
         // pega todos os usuários ordenados por nome
         const orderedUsers = await orderByName(req.query.order as string)
 
-         
+                
         if(!users.length){
           res.statusCode = 404
           throw new Error("No recipes found")
@@ -24,8 +24,9 @@ export const getAllUsers = async(req: Request,res: Response): Promise<void> =>{
            throw new Error("Ordenação inválida")
         }       
 
-        res.status(200).send(orderedUsers)
- 
+        if(req.query.order) {
+            res.status(200).send(orderedUsers)
+        } 
        
     } catch (error) {
         console.log(error)
