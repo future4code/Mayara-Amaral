@@ -5,7 +5,8 @@ export const orderByType = async (type: string): Promise<user[]> => {
     try {
         const result = await connection.raw(`
             SELECT * FROM aula48_exercicio 
-            WHERE type LIKE "%${type}%";
+            WHERE type LIKE "%${type}%"
+            ORDER BY type DESC;
             `)
 
         if(!result[0]) {
