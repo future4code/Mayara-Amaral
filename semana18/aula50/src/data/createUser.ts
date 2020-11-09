@@ -10,6 +10,6 @@ export async function createUser(
         .insert({id, email, password})
         .into("userTable")
     } catch (error) {
-        console.log(error.sqlMessage || error.message)
+        return (error.sqlMessage || error.message)
     }
 }

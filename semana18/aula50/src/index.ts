@@ -2,7 +2,7 @@ import express, {Express} from 'express'
 import cors from 'cors'
 import knex from 'knex'
 import dotenv from 'dotenv'
-import { idGenerate } from './services/idGenerate'
+import { postSignUp } from './endpoints/postSignUp'
 
 const app: Express = express()
 
@@ -21,5 +21,7 @@ export const connection = knex({
         database: process.env.DB_NAME
     }
 })
+
+app.post("/signup", postSignUp)
 
 app.listen(3003, () => {console.log("Servidor rodando na porta 3003")})
