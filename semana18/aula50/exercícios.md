@@ -21,10 +21,11 @@ export function idGenerate():string {
 **b.**
 ```sql
     CREATE TABLE userTable (
-        id INT PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
+        id VARCHAR(255) PRIMARY KEY,
+        email VARCHAR(255) NOT NULL,
         password VARCHAR(255) NOT NULL
-    );
+);
+
 ```
 
 **c.**

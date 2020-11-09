@@ -1,4 +1,4 @@
-import {connection} from '../index'
+import { connection } from ".."
 
 export async function createUser(
     id: string,

@@ -3,6 +3,7 @@ import cors from 'cors'
 import knex from 'knex'
 import dotenv from 'dotenv'
 import { postSignUp } from './endpoints/postSignUp'
+import { getUserByEmail } from './endpoints/getUserByEmail'
 
 const app: Express = express()
 
@@ -23,5 +24,7 @@ export const connection = knex({
 })
 
 app.post("/signup", postSignUp)
+
+app.get("/user", getUserByEmail)
 
 app.listen(3003, () => {console.log("Servidor rodando na porta 3003")})
