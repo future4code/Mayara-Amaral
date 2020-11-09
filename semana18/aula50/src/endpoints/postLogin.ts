@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { login } from "../data/login";
+import { getData } from "../services/getData";
 import { tokenGenerate } from "../services/tokenGenerate";
 
 export async function postLogin(req: Request, res: Response):Promise<any> {
@@ -29,8 +30,7 @@ export async function postLogin(req: Request, res: Response):Promise<any> {
 
         const token = tokenGenerate({id: user.id})
 
-        res.status(200).send({token})
-
+        res.status(200).send({token})      
         
     } catch (error) {
         res.status(400).send(error.sqlMessage || error.message)

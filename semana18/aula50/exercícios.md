@@ -176,3 +176,22 @@ export async function postLogin(req: Request, res: Response):Promise<any> {
     }
 }
 ```
+
+**7.**
+
+**a.** A linha "as any" verifica os dados do token com a JWT_KEY.
+**b.**
+
+```ts
+import * as jwt from "jsonwebtoken"
+
+export const getData = (token: string) => {
+    const payload = jwt.verify(token, process.env.JWT_KEY as string) as any;
+    const result = {
+        id: payload.id
+    };
+    return result
+}   
+```
+
+**8.**
