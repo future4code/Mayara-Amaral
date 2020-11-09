@@ -13,3 +13,35 @@ export function idGenerate():string {
 }
 
 ```
+
+**2.**
+
+**a.** O código está fazendo a conexão com o banco de dados e a função createUser está recebendo um id, um email e uma password e inserindo na tabela userTableName, no banco de dados.
+
+**b.**
+```sql
+    CREATE TABLE userTable (
+        id INT PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        password VARCHAR(255) NOT NULL
+    );
+```
+
+**c.**
+```ts
+import {connection} from '../index'
+
+export async function createUser(
+    id: string,
+    email: string, 
+    password:string
+):Promise<void>{
+    try {
+        await connection
+        .insert({id, email, password})
+        .into("userTable")
+    } catch (error) {
+        console.log(error.sqlMessage || error.message)
+    }
+}
+```
