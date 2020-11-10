@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import { getUser } from "../data/getUser";
-import { User } from "../types";
 
 export async function getUserByEmail(req: Request, res: Response): Promise<any> {
     try {
