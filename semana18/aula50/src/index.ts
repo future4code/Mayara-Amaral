@@ -5,6 +5,7 @@ import dotenv from 'dotenv'
 import { postSignUp } from './endpoints/postSignUp'
 import { getUserByEmail } from './endpoints/getUserByEmail'
 import { postLogin } from './endpoints/postLogin'
+import { getProfile } from './endpoints/getProfile'
 
 const app: Express = express()
 
@@ -29,5 +30,7 @@ app.post("/signup", postSignUp)
 app.get("/user", getUserByEmail)
 
 app.post("/login", postLogin)
+
+app.get("/user/profile", getProfile)
 
 app.listen(3003, () => {console.log("Servidor rodando na porta 3003")})
