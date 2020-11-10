@@ -1,5 +1,5 @@
 import { connection } from ".."
-import { typeUser } from "../types"
+import { USER_ROLE } from "../types"
 
 export const insertUser = async (
     id: string,
@@ -7,11 +7,11 @@ export const insertUser = async (
     nickname: string, 
     email: string, 
     password: string,
-    type: typeUser
+    role: USER_ROLE
     ): Promise<any> => {
         try {
             await connection
-            .insert({id, name, nickname, email, password, type})
+            .insert({id, name, nickname, email, password, role})
             .into("usuarios")            
         } catch (error) {
             return error.sqlMessage

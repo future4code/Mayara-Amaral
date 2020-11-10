@@ -9,7 +9,7 @@ export type User = {
     nickname: string, 
     email: string, 
     password: string,
-    type: USER_ROLE
+    role: USER_ROLE
 }
 
 export type authenticationData = {

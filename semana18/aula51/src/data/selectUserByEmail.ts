@@ -17,7 +17,7 @@ export const selectUserByEmail = async (email: string): Promise<User> => {
             nickname: result[0].nickname,
             email: result[0].email,
             password: result[0].password,
-            type: result[0].type
+            role: result[0].role
         })
     } catch (error) {
         console.log(error)

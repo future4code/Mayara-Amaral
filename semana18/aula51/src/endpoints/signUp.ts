@@ -9,14 +9,14 @@ export const signUp = async (req: Request, res: Response): Promise<void> => {
         const id: string = idGenerator();   
 
         //desestruturação
-        const {name, nickname, email, password, type} = req.body
+        const {name, nickname, email, password, role} = req.body
 
         if( 
             !name 
             || !nickname 
             || !email 
             || !password 
-            || !type
+            || !role
         ){
             throw new Error("Preencha todos os campos.")
         }        
@@ -25,12 +25,12 @@ export const signUp = async (req: Request, res: Response): Promise<void> => {
         const passwordHash: string = await generateHash(password);
         
         //envia as informações para o banco
-        const User = await insertUser(id, name, nickname, email, passwordHash, type)
+        const User = await insertUser(id, name, nickname, email, passwordHash, role)
         
         // tratamento de erros
 
-        if(User.includes("type")){
-            throw new Error("A chave 'type' deve receber 'ADMIN' ou 'NORMAL'")
+        if(User.includes("role")){
+            throw new Error("A chave 'role' deve receber 'ADMIN' ou 'NORMAL'")
         }
 
         if(User.includes("nickname")){
