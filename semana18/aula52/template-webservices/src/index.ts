@@ -8,6 +8,7 @@ import editUser from './endpoints/editUser'
 import createTask from './endpoints/createTask'
 import getTaskById from './endpoints/getTaskById'
 import login from './endpoints/login'
+import { registerAddress } from './endpoints/registerAddress'
 
 dotenv.config()
 
@@ -33,6 +34,7 @@ app.get("/", async function(req,res){
 
 app.post('/user/signup', createUser)
 app.post("/user/login", login)
+app.post('/user/address', registerAddress)
 app.get('/user/:id', getUserById)
 app.post('/user/edit', editUser)
 
