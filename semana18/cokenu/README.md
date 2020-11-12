@@ -65,3 +65,7 @@ CREATE TABLE followers_relationship(
 7. Perfil de outro usuário
    
    ```/user/:id```
+
+## Quadro no trello
+
+https://trello.com/b/RjknVbfH/cokenu
