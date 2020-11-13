@@ -3,6 +3,7 @@ import cors from 'cors'
 import knex from 'knex'
 import dotenv from 'dotenv'
 import { postNewUser } from './endpoints/postNewUser'
+import { postLoginUser } from './endpoints/postLoginUser'
 
 dotenv.config()
 
@@ -23,5 +24,6 @@ export const connection = knex({
 })
 
 app.post("/signup", postNewUser)
+app.post("/login", postLoginUser)
 
 app.listen(3003, () => console.log('Server running on port 3003!'))
