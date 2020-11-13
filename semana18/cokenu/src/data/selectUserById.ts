@@ -18,5 +18,6 @@ export const selectUserById = async (id: string, loggedUser: AuthenticationData,
 
     } catch (error) {
         return error
-    }
+    } 
+    
 }
