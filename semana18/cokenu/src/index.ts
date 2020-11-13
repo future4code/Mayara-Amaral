@@ -5,6 +5,7 @@ import dotenv from 'dotenv'
 import { postNewUser } from './endpoints/postNewUser'
 import { postLoginUser } from './endpoints/postLoginUser'
 import { postNewRecipe } from './endpoints/postNewRecipe'
+import { getRecipeById } from './endpoints/getRecipeById'
 
 dotenv.config()
 
@@ -27,5 +28,7 @@ export const connection = knex({
 app.post("/signup", postNewUser)
 app.post("/login", postLoginUser)
 app.post("/recipe", postNewRecipe)
+
+app.get("/recipe/:id", getRecipeById)
 
 app.listen(3003, () => console.log('Server running on port 3003!'))
