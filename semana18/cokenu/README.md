@@ -6,7 +6,7 @@
 
 ```sql
 CREATE TABLE user_cokenu(
-	id VARCHAR(255) NOT NULL,
+	id VARCHAR(255) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL
@@ -39,10 +39,14 @@ CREATE TABLE followers_relationship(
 ## Caminhos
 
 1. Cadastro de usuários
+   
+    **Método: POST**
 
     ``` /signup ```  
 
 2. Login
+   
+   **Método: POST**
    
    ```/login ```
 
@@ -51,18 +55,26 @@ CREATE TABLE followers_relationship(
     ```/feed```
 
 4. Criar Receitas
+
+    **Método: POST**
     
     ```/recipe```
 
 5. Pegar receita
 
+    **Método: GET**
+
     ```/recipe/:id```
 
 6. Perfil
+
+    **Método: GET**
    
    ```/user/profile```
 
 7. Perfil de outro usuário
+
+    **Método: GET**
    
    ```/user/:id```
 
