@@ -7,6 +7,7 @@ import { postLoginUser } from './endpoints/postLoginUser'
 import { postNewRecipe } from './endpoints/postNewRecipe'
 import { getRecipeById } from './endpoints/getRecipeById'
 import { getProfile } from './endpoints/getProfile'
+import { getProfileById } from './endpoints/getProfileById'
 
 dotenv.config()
 
@@ -32,5 +33,6 @@ app.post("/recipe", postNewRecipe)
 
 app.get("/recipe/:id", getRecipeById)
 app.get("/user/profile", getProfile)
+app.get("/user/:id", getProfileById)
 
 app.listen(3003, () => console.log('Server running on port 3003!'))
