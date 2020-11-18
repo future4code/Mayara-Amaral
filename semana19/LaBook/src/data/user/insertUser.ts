@@ -1,7 +1,7 @@
 import { User } from "../../types"
 import { connection } from "../connection"
 
-export const createUser = async (user: User): Promise <any> => {
+export const insertUser = async (user: User): Promise <any> => {
     try {
         //console.log(user)
 

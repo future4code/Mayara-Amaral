@@ -3,7 +3,11 @@ import { Request, Response } from "express";
 import { selectUserByEmail } from "../../data/user/selectUserByEmail";
 import { generateToken } from "../../services/authenticator";
 
-export const postLogin = async (req: Request, res: Response): Promise<void> => {
+export const postLogin = async (
+    req: Request, 
+    res: Response
+): Promise<void> => {
+    
     let errorCode: number = 400
     let errorMessage: string = "Password is invalid."
 
