@@ -1,10 +1,6 @@
 import { Request, Response } from "express";
-import { stringify } from "querystring";
 import { createPostBusiness } from "../../business/posts/createPostBusiness";
-import { insertPost } from "../../data/posts/insertPost";
 import { createPostInput, stringToPostRole } from "../../model/Post";
-import { getTokenData } from "../../services/authenticator";
-import { generateId } from "../../services/idGenerator";
 
 export const createPost = async (
     req: Request, 

@@ -19,6 +19,11 @@ export type createPostInput = {
     type: POST_ROLE
 }
 
+export type getPostInput = {
+    token: string
+    id: string
+}
+
 export function stringToPostRole(role: string): POST_ROLE {
     if(role.toUpperCase() === POST_ROLE.NORMAL){
         return POST_ROLE.NORMAL
