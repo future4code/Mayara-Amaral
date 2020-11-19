@@ -1,4 +1,4 @@
-import { Post } from "../../types";
+import { Post } from "../../model/Post";
 import { connection } from "../connection";
 
 export const insertPost = async (post: Post): Promise<any> => {

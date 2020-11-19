@@ -1,4 +1,5 @@
 import { insertPost } from "../../data/posts/insertPost"
+import { Post, stringToPostRole } from "../../model/Post"
 import { getTokenData } from "../../services/authenticator"
 import { generateId } from "../../services/idGenerator"
 
@@ -21,7 +22,7 @@ export const createPostBusiness = async (input: any): Promise<string> => {
 
         const photo = input.photo
         const description = input.description
-        const type = input.type
+        const type = stringToPostRole(input.type)
 
         if(
             !photo ||
@@ -37,14 +38,16 @@ export const createPostBusiness = async (input: any): Promise<string> => {
 
         const created_at = new Date()
 
-        const result = await insertPost({id, photo, description, type, created_at, author_id})
+        const post: Post = {id, photo, description, type, created_at, author_id}
+
+        const result = await insertPost(post)
 
         if(!result.length){
             throw new Error()
         }
 
         return "Published successfully."
-        
+
     } catch (error) {
 
         return error.message

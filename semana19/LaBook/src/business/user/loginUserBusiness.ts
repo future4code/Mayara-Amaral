@@ -8,7 +8,6 @@ export const loginUserBusiness = async (input: any): Promise<string> => {
     let errorMessage: string = "Password is invalid."
         
     try {
-    
         if(!input.email || !input.password){
             errorMessage = "Fill in all fields."
             throw new Error(errorMessage)

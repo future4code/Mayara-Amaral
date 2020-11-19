@@ -1,9 +1,8 @@
 import { insertUser } from "../../data/user/insertUser"
 import { generateToken } from "../../services/authenticator"
-import { CustomError } from "../../services/customError"
 import { hash } from "../../services/hashManager"
 import { generateId } from "../../services/idGenerator"
-import { User } from "../../types"
+import { User } from "../../model/User"
 
 export const createUserBusiness = async (input: any): Promise<string> => {
     
@@ -25,7 +24,7 @@ export const createUserBusiness = async (input: any): Promise<string> => {
         const result = await insertUser(user)
     
         if(result.includes("Duplicate")){
-            throw new CustomError(406, "Email already registered.")
+            throw new Error("Email already registered.")
         }
     
         const token = generateToken({id: id});

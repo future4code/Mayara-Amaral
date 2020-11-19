@@ -1,6 +1,7 @@
 import { compare } from "bcryptjs";
 import { Request, Response } from "express";
 import { createUserBusiness } from "../../business/user/createUserBusiness";
+import { loginUserBusiness } from "../../business/user/loginUserBusiness";
 import { selectUserByEmail } from "../../data/user/selectUserByEmail";
 import { generateToken } from "../../services/authenticator";
 
@@ -16,7 +17,9 @@ export const postLogin = async (
             password: req.body.password
         }
 
-        const token = createUserBusiness(input)        
+        const token = await loginUserBusiness(input) 
+        
+        //console.log(token)
 
         res.status(200).send({
             token: token, 
