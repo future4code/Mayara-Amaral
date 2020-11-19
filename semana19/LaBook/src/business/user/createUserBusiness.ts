@@ -2,9 +2,9 @@ import { insertUser } from "../../data/user/insertUser"
 import { generateToken } from "../../services/authenticator"
 import { hash } from "../../services/hashManager"
 import { generateId } from "../../services/idGenerator"
-import { User } from "../../model/User"
+import { createUserInput, createUserOutput, User } from "../../model/User"
 
-export const createUserBusiness = async (input: any): Promise<string> => {
+export const createUserBusiness = async (input: createUserInput): Promise<createUserOutput> => {
     
     let errorMessage: string = "Bad Request"
 
@@ -29,7 +29,7 @@ export const createUserBusiness = async (input: any): Promise<string> => {
     
         const token = generateToken({id: id});
     
-        return token
+        return {token}
         
     } catch (error) {
 

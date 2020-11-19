@@ -1,8 +1,9 @@
 import { selectUserByEmail } from "../../data/user/selectUserByEmail"
+import { createUserOutput, loginUserInput } from "../../model/User"
 import { generateToken } from "../../services/authenticator"
 import { compare } from "../../services/hashManager"
 
-export const loginUserBusiness = async (input: any): Promise<string> => {
+export const loginUserBusiness = async (input: loginUserInput): Promise<createUserOutput> => {
 
     let errorCode: number = 400
     let errorMessage: string = "Password is invalid."
@@ -31,7 +32,7 @@ export const loginUserBusiness = async (input: any): Promise<string> => {
 
         const token = generateToken({id: user.id})
 
-        return token
+        return {token}
     } catch (error) {
         return error.message
     }

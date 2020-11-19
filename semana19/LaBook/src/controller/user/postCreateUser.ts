@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { createUserBusiness } from "../../business/user/createUserBusiness";
+import { createUserInput } from "../../model/User";
 
 export const postCreateUser = async (
     req: Request, 
@@ -8,7 +9,7 @@ export const postCreateUser = async (
 
     try {
 
-        const input = {
+        const input: createUserInput = {
             name: req.body.name,
             email: req.body.email,
             password: req.body.password

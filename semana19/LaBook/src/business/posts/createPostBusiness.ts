@@ -1,9 +1,9 @@
 import { insertPost } from "../../data/posts/insertPost"
-import { Post, stringToPostRole } from "../../model/Post"
+import { createPostInput, Post, stringToPostRole } from "../../model/Post"
 import { getTokenData } from "../../services/authenticator"
 import { generateId } from "../../services/idGenerator"
 
-export const createPostBusiness = async (input: any): Promise<string> => {
+export const createPostBusiness = async (input: createPostInput): Promise<string> => {
     let errorMessage: string = "Bad Request"
     let errorCode: number = 400
 
@@ -22,7 +22,7 @@ export const createPostBusiness = async (input: any): Promise<string> => {
 
         const photo = input.photo
         const description = input.description
-        const type = stringToPostRole(input.type)
+        const type = input.type 
 
         if(
             !photo ||

@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import { createUserBusiness } from "../../business/user/createUserBusiness";
 import { loginUserBusiness } from "../../business/user/loginUserBusiness";
 import { selectUserByEmail } from "../../data/user/selectUserByEmail";
+import { loginUserInput } from "../../model/User";
 import { generateToken } from "../../services/authenticator";
 
 export const postLogin = async (
@@ -12,7 +13,7 @@ export const postLogin = async (
 
     try {
 
-        const input = {
+        const input: loginUserInput = {
             email: req.body.email,
             password: req.body.password
         }
