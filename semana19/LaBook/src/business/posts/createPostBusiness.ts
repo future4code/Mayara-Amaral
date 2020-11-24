@@ -36,7 +36,11 @@ export const createPostBusiness = async (input: createPostInput): Promise<string
 
         const author_id = userData.id
 
-        const created_at = new Date()
+        const year = new Date().getFullYear()
+        const month = new Date().getMonth()
+        const day = new Date().getDate()
+
+        const created_at = new Date(year, month, day)
 
         const post: Post = {id, photo, description, type, created_at, author_id}
 
