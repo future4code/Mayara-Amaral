@@ -1,35 +1,21 @@
 import { Request, Response } from "express";
-import { createUser } from "../../data/user/createUser";
-import { generateToken } from "../../services/authenticator";
-import { hash } from "../../services/hashManager";
-import { generateId } from "../../services/idGenerator";
-import { User } from "../../types";
+import { createUserBusiness } from "../../business/user/createUserBusiness";
+import { createUserInput } from "../../model/User";
 
-export const postCreateUser = async (req: Request, res: Response): Promise<void> => {
-    let errorCode: number = 400
-    let errorMessage: string = "Bad Request"
+export const postCreateUser = async (
+    req: Request, 
+    res: Response
+): Promise<void> => {
 
     try {
-        const id: string = generateId()
 
-        const {name, email, password} = req.body
-
-        if(!name || !email || !password) {
-            errorMessage = "Fill in all fields."
-            throw new Error(errorMessage)
+        const input: createUserInput = {
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password
         }
 
-        const passwordHash: string = await hash(password)
-
-        const user: User = {id: id, name: name, email: email, password: passwordHash}
-
-        const result = await createUser(user)
-
-        if(result.includes("Duplicate")){
-            throw new Error("Email already registered.")
-        }
-
-        const token = generateToken({id: id})
+        const token = await createUserBusiness(input)
 
         res.status(200).send({
             token: token, 
@@ -37,6 +23,6 @@ export const postCreateUser = async (req: Request, res: Response): Promise<void>
         })
 
     } catch (error) {
-        res.status(errorCode).send(error.message || error.sqlMessage)
+        res.status(400).send(error.message || error.sqlMessage)
     }
 }

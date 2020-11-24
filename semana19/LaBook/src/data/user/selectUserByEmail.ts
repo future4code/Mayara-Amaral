@@ -1,4 +1,4 @@
-import { User } from "../../types"
+import { User } from "../../model/User"
 import { connection } from "../connection"
 
 export const selectUserByEmail = async (email: string): Promise<User> => {

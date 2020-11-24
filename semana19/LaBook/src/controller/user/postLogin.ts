@@ -1,43 +1,33 @@
 import { compare } from "bcryptjs";
 import { Request, Response } from "express";
+import { createUserBusiness } from "../../business/user/createUserBusiness";
+import { loginUserBusiness } from "../../business/user/loginUserBusiness";
 import { selectUserByEmail } from "../../data/user/selectUserByEmail";
+import { loginUserInput } from "../../model/User";
 import { generateToken } from "../../services/authenticator";
 
-export const postLogin = async (req: Request, res: Response): Promise<void> => {
-    let errorCode: number = 400
-    let errorMessage: string = "Password is invalid."
+export const postLogin = async (
+    req: Request, 
+    res: Response
+): Promise<void> => {
 
     try {
-        const {email, password} = req.body
 
-        if(!email || !password){
-            errorMessage = "Fill in all fields."
-            throw new Error(errorMessage)
+        const input: loginUserInput = {
+            email: req.body.email,
+            password: req.body.password
         }
 
-        const user = await selectUserByEmail(email)
-
-        if(!user){
-            errorMessage = "User not found."
-            throw new Error(errorMessage)
-        }
-
-        const passwordIsCorrect = await compare(password, user.password)
-
-        console.log(passwordIsCorrect)
-
-        if(!passwordIsCorrect){
-            errorCode = 401
-            throw new Error(errorMessage)
-        }
-
-        const token = generateToken({id: user.id})
+        const token = await loginUserBusiness(input) 
+        
+        //console.log(token)
 
         res.status(200).send({
             token: token, 
             message: "User successfully logged in!"
         })
+        
     } catch (error) {
-        res.status(errorCode).send(errorMessage || error.sqlMessage)
+        res.status(400).send(error.message|| error.sqlMessage)
     }
 }
