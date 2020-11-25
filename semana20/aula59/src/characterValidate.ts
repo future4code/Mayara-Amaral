@@ -1,18 +1,31 @@
-interface Character {
+export interface Character {
     name: string,
     life: number,
     defense: number,
     force: number
 }
 
-export const validateCharacter = (input: Character) => {
+export interface validateOutput {
+    isValid: boolean
+}
+
+export const validateCharacter = (
+    input: Character, 
+    validator: (input: any) => validateOutput
+) => {
+    const validationResult = validator(input)
+
+    if (!validationResult.isValid) {
+        throw new Error("Missing Properties");
+    }
+
     if(
         !input.name || 
         !input.life === undefined ||
         !input.defense === undefined ||
         !input.force === undefined
     ){
-        return false
+        throw new Error("Invalid name.")
     }
 
     if(input.life < 0){
