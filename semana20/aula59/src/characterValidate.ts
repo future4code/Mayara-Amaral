@@ -29,7 +29,7 @@ export const validateCharacter = (
     }
 
     if(input.life <= 0){
-        throw new Error("The character is dead.")
+        return false
     }
 
     if(input.defense <= 0){

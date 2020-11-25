@@ -75,3 +75,106 @@ describe("Testing the function characterValidade", () => {
 
 })
 ```
+**B.**
+```ts
+test("Must return false if life is zero", () => {
+
+        const myObj: Character = {
+                name: "Cão Covarde",
+                life: 0,
+                defense: 1000,
+                force: 1000
+        }
+
+        const validatorMock = jest.fn((input: any): validateOutput => {
+            return {isValid: true}
+        })    
+
+        const result = validateCharacter(myObj, validatorMock as any)
+
+        expect(result).toBe(false)       
+
+    });
+```
+
+**C.**
+```ts
+test("Must return false if the force is at zero", () => {
+        const myObj: Character = {
+            name: "Cão Covarde",
+            life: 1500,
+            defense: 1000,
+            force: 0
+        }
+
+        const validatorMock = jest.fn((input: any): validateOutput => {
+            return {isValid: true}
+        })
+
+        const result = validateCharacter(myObj, validatorMock as any)
+
+        expect(result).toBe(false)
+    });
+```
+
+**D.**
+```ts
+ test("Must return false if the defense is at zero", () => {
+        const myObj: Character = {
+            name: "Cão Covarde",
+            life: 1500,
+            defense: 0,
+            force: 1000
+        }
+
+        const validatorMock = jest.fn((input: any): validateOutput => {
+            return {isValid: true}
+        })
+
+        const result = validateCharacter(myObj, validatorMock as any)
+
+        expect(result).toBe(false)
+    })
+```
+
+**E.**
+```ts
+test("Must return false if defense or strength or life is less than zero", () => {
+        const myObj: Character = {
+            name: "Cão Covarde",
+            life: -1500,
+            defense: 0,
+            force: 1000
+        }
+
+        const validatorMock = jest.fn((input: any): validateOutput => {
+            return {isValid: true}
+        })
+
+        const result = validateCharacter(myObj, validatorMock as any)
+
+        expect(result).toBe(false)
+    })
+```
+
+**F.**
+```ts
+    test("Must return true with all valid data", () => {
+        const myObj: Character = {
+            name: "Cão Covarde",
+            life: 1500,
+            defense: 1000,
+            force: 1000
+        }
+
+        const validatorMock = jest.fn((input: any): validateOutput => {
+            return {isValid: true}
+        })
+
+        const result = validateCharacter(myObj, validatorMock as any)
+
+        expect(result).toBe(true)
+    });
+```
+```
+
