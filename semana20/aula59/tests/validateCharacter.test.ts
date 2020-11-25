@@ -26,4 +26,28 @@ describe("Testing the function characterValidade", () => {
         }
     });
 
-})
+    test("You should return an error saying that the character is dead.", () => {
+
+        expect.assertions(1)
+
+        const myObj: Character = {
+                name: "Cão Covarde",
+                life: 0,
+                defense: 1000,
+                force: 1000
+        }
+
+        const validatorMock = jest.fn((input: any): validateOutput => {
+            return {isValid: true}
+        })
+
+        try {
+            const result = validateCharacter(myObj, validatorMock as any)
+
+        } catch (error) {            
+            expect(error.message).toBe('The character is dead.')
+        }
+
+    });
+
+});

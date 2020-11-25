@@ -28,15 +28,15 @@ export const validateCharacter = (
         throw new Error("Invalid name.")
     }
 
-    if(input.life < 0){
+    if(input.life <= 0){
+        throw new Error("The character is dead.")
+    }
+
+    if(input.defense <= 0){
         return false
     }
 
-    if(input.defense < 0){
-        return false
-    }
-
-    if(input.force < 0){
+    if(input.force <= 0){
        return false
     }
 
